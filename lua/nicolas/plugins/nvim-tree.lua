@@ -5,13 +5,13 @@ return {
 	dependencies = {
 		{ "nvim-tree/nvim-web-devicons", lazy = true }, -- Optional plugin
 	},
-	config = function() -- Executed when plugin loads
+	config = function() -- Executed when nvim-tree loads
 		-- Disable Netrw (default file explorer)
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 
 		-- Require and setup nvim-tree
-		local tree = require("nvim-tree") -- Loaded, no need por protected call
+		local tree = require("nvim-tree") -- Loaded, no need for protected call
 		tree.setup({
 			-- Change default arrows in file explorer
 			renderer = {
