@@ -12,7 +12,19 @@ return {
 
 		-- Require and setup nvim-tree
 		local tree = require("nvim-tree") -- Loaded, no need por protected call
-		tree.setup()
+		tree.setup({
+			-- Change default arrows in file explorer
+			renderer = {
+				icons = {
+					glyphs = {
+						folder = {
+							arrow_closed = "",
+							arrow_open = "",
+						},
+					},
+				},
+			},
+		})
 
 		-- Set custom keys
 		local keymap = vim.keymap -- For conciseness
