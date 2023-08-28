@@ -22,5 +22,5 @@ if not status then
 	return
 end
 
--- Setup lazy.nvim
-lazy.setup({})
+-- Setup lazy.nvim and link the plugins directory
+lazy.setup("nicolas.plugins")
