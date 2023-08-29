@@ -19,7 +19,11 @@ return {
 		null_ls.setup({
 			-- Setup formatters
 			sources = {
-				formatting.stylua, -- Lua
+				formatting.stylua.with({ -- Lua, only when config file exists
+					condition = function(utils)
+						return utils.root_has_file(".stylelua.toml")
+					end,
+				}),
 			},
 
 			-- Setup sync format on save (blocks nvim until results are applied)
