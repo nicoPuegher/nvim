@@ -26,4 +26,9 @@ end
 lazy.setup({
 	{ import = "nicolas.plugins" },
 	{ import = "nicolas.plugins.lsp" },
-}, {})
+}, {
+	-- Try and load nightfly theme when starting an installation during startup
+	install = {
+		colorscheme = { "nightfly" },
+	},
+})
