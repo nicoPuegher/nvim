@@ -22,5 +22,8 @@ if not status then
 	return
 end
 
--- Setup lazy.nvim and link the plugins directory
-lazy.setup("nicolas.plugins")
+-- Setup lazy.nvim and link the plugins and lsp directories
+lazy.setup({
+	{ import = "nicolas.plugins" },
+	{ import = "nicolas.plugins.lsp" },
+}, {})
