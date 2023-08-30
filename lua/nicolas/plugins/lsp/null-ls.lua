@@ -1,6 +1,5 @@
 return {
 	"jose-elias-alvarez/null-ls.nvim",
-	version = "*", -- Latest stable version
 	event = { "BufReadPre", "BufNewFile" }, -- Loads on opening or creating a file
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- Required, lib of simplified lua fns
