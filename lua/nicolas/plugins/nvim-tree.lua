@@ -1,9 +1,7 @@
 return {
 	"nvim-tree/nvim-tree.lua",
-	version = "*", -- Latest stable version
-	lazy = false,
 	dependencies = {
-		{ "nvim-tree/nvim-web-devicons", lazy = true }, -- Optional plugin
+		"nvim-tree/nvim-web-devicons", -- Optional plugin to add icons
 	},
 	config = function() -- Executed when nvim-tree loads
 		-- Disable Netrw (default file explorer)
