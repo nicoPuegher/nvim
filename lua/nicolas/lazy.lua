@@ -27,10 +27,6 @@ lazy.setup({
 	{ import = "nicolas.plugins" },
 	{ import = "nicolas.plugins.lsp" },
 }, {
-	-- Try install plugins with the latest stable version
-	defaults = {
-		version = "*",
-	},
 	-- Try and load nightfly theme when starting an installation during startup
 	install = {
 		colorscheme = { "nightfly" },
