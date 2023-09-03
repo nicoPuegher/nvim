@@ -39,6 +39,13 @@ return {
 			keymap.set("n", "]d", diagnostic.goto_next, opts)
 		end
 
+		-- Add custom diagnostic signs
+		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+		for type, icon in pairs(signs) do
+			local hl = "DiagnosticSign" .. type
+			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+		end
+
 		-- Connect lua-language-server and set it up
 		lspconfig.lua_ls.setup({
 			on_attach = on_attach, -- Attaches fn with keymaps
