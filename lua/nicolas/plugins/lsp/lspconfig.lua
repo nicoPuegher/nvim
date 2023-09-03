@@ -7,6 +7,7 @@ return {
 		local keymap = vim.keymap
 		local lsp = vim.lsp.buf
 		local diagnostic = vim.diagnostic
+		local fn = vim.fn
 
 		-- Create a function that only runs when there is an lsp for the current buffer
 		local on_attach = function(client, bufnr)
@@ -43,7 +44,7 @@ return {
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+			fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
 		-- Connect lua-language-server and set it up
@@ -58,8 +59,8 @@ return {
 					-- Make server aware of runtime files
 					workspace = {
 						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
+							[fn.expand("$VIMRUNTIME/lua")] = true,
+							[fn.stdpath("config") .. "/lua"] = true,
 						},
 					},
 				},
