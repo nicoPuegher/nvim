@@ -1,9 +1,14 @@
 return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" }, -- Loads on opening or creating a file
+	dependencies = {
+		"hrsh7th/cmp-nvim-lsp", -- Adds extra capabilities for lsp
+	},
 	config = function()
 		-- For conciseness
 		local lspconfig = require("lspconfig") -- Loaded, no need for protected call
+		local cmp_nvim_lsp = require("cmp_nvim_lsp") -- Loaded, no need for protected call
+		local capabilities = cmp_nvim_lsp.default_capabilities()
 		local keymap = vim.keymap
 		local lsp = vim.lsp.buf
 		local diagnostic = vim.diagnostic
@@ -50,6 +55,7 @@ return {
 		-- Connect lua-language-server and set it up
 		lspconfig.lua_ls.setup({
 			on_attach = on_attach, -- Attaches fn with keymaps
+			capabilities = capabilities, -- Attaches extra capabilities
 			settings = {
 				Lua = {
 					-- Make server recognize vim globally
