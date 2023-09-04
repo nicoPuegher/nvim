@@ -24,8 +24,11 @@ return {
 			}),
 			-- Link suggestion sources
 			sources = config({
-				{ name = "buffer" },
+				{ name = "nvim_lsp" },
 				{ name = "path" },
+				{
+					{ name = "buffer" },
+				},
 			}),
 		})
 	end,
