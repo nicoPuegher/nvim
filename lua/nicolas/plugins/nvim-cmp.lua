@@ -5,11 +5,13 @@ return {
 		"hrsh7th/cmp-buffer", -- Recommends text in current buffer
 		"hrsh7th/cmp-path", -- Recommends file paths
 		"L3MON4D3/LuaSnip", -- Autocomplete/snippet engine
+		"onsails/lspkind.nvim", -- Adds vscode-like pictograms
 	},
 	config = function() -- Executed when nvim-cmp loads
 		-- For conciseness
 		local cmp = require("cmp") -- Loaded, no need for protected call
 		local luasnip = require("luasnip") -- Loaded, no need for protected call
+		local lspkind = require("lspkind") -- Loaded, no need for protected call
 		local map = cmp.mapping
 		local config = cmp.config.sources
 
@@ -38,6 +40,10 @@ return {
 					{ name = "buffer" },
 				},
 			}),
+			-- Set custom format
+			formatting = {
+				format = lspkind.cmp_format({}),
+			},
 		})
 	end,
 }
