@@ -8,10 +8,12 @@ return {
 		"onsails/lspkind.nvim", -- Adds vscode-like pictograms
 	},
 	config = function() -- Executed when nvim-cmp loads
+		-- Loaded, no need for protected call
+		local cmp = require("cmp")
+		local luasnip = require("luasnip")
+		local lspkind = require("lspkind")
+
 		-- For conciseness
-		local cmp = require("cmp") -- Loaded, no need for protected call
-		local luasnip = require("luasnip") -- Loaded, no need for protected call
-		local lspkind = require("lspkind") -- Loaded, no need for protected call
 		local map = cmp.mapping
 		local config = cmp.config.sources
 

@@ -5,9 +5,11 @@ return {
 		"hrsh7th/cmp-nvim-lsp", -- Adds extra capabilities for lsp
 	},
 	config = function()
+		-- Loaded, no need for protected call
+		local lspconfig = require("lspconfig")
+		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
 		-- For conciseness
-		local lspconfig = require("lspconfig") -- Loaded, no need for protected call
-		local cmp_nvim_lsp = require("cmp_nvim_lsp") -- Loaded, no need for protected call
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 		local keymap = vim.keymap
 		local lsp = vim.lsp.buf
