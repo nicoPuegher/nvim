@@ -8,8 +8,9 @@ return {
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 
-		-- Require and setup nvim-tree
 		local tree = require("nvim-tree") -- Loaded, no need for protected call
+
+		-- Setup nvim-tree
 		tree.setup({
 			-- Change default arrows in file explorer
 			renderer = {
