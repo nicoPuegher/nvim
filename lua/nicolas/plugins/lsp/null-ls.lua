@@ -5,8 +5,9 @@ return {
 		"nvim-lua/plenary.nvim", -- Required, lib of simplified lua fns
 	},
 	config = function() -- Executed when null-ls.nvim loads
-		-- For conciseness
 		local null_ls = require("null-ls") -- Loaded, no need for protected call
+
+		-- For conciseness
 		local formatting = null_ls.builtins.formatting
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 		local clear_autocmds = vim.api.nvim_clear_autocmds
@@ -38,8 +39,8 @@ return {
 							format({
 								bufnr = bufnr,
 								-- Pass all formatting requests to null-ls
-								filter = function(client)
-									return client.name == "null-ls"
+								filter = function(curr_client)
+									return curr_client.name == "null-ls"
 								end,
 							})
 						end,
