@@ -3,6 +3,10 @@ return {
 	branch = "0.1.x", -- Specified in documentation
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- Required, lib of simplified lua fns
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, -- Optional native sorter
+		"nvim-tree/nvim-web-devicons", -- Optional plugin to add icons
+		-- BurntSushi/ripgrep -- Required local install, needed for grep_string/live_grep
+		-- sharkdp/fd -- Optional local install, custom find
 	},
 	config = function() -- Executed when telescope.nvim loads
 		-- Loaded, no need for protected call
