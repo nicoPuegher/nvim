@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp", -- Adds extra capabilities for lsp
 	},
-	config = function()
+	config = function() -- Executed when nvim-lspconfig loads
 		-- Loaded, no need for protected call
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
