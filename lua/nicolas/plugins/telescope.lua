@@ -11,10 +11,22 @@ return {
 	config = function() -- Executed when telescope.nvim loads
 		-- Loaded, no need for protected call
 		local telescope = require("telescope")
+		local actions = require("telescope.actions")
 		local builtin = require("telescope.builtin")
 
 		-- Setup telescope.nvim
-		telescope.setup({})
+		telescope.setup({
+			-- Set custom settings
+			defaults = {
+				-- Custom keybindings when finder is open
+				mappings = {
+					i = {
+						["<C-k>"] = actions.move_selection_previous, -- Move up in finder
+						["<C-j>"] = actions.move_selection_next, -- Move down in finder
+					},
+				},
+			},
+		})
 
 		-- Set custom keys
 		local keymap = vim.keymap -- For conciseness
