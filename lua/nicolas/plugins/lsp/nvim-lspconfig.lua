@@ -74,5 +74,10 @@ return {
 				},
 			},
 		})
+		-- Connect pyright and set it up (Python language server)
+		lspconfig.pyright.setup({
+			on_attach = on_attach, -- Attaches fn with keymaps
+			capabilities = capabilities, -- Attaches extra capabilities
+		})
 	end,
 }
