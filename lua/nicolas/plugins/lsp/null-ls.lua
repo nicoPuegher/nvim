@@ -25,6 +25,7 @@ return {
 						return utils.root_has_file(".stylelua.toml")
 					end,
 				}),
+				formatting.black, -- Python
 				-- Linters
 				diagnostics.ruff, -- Python
 			},
