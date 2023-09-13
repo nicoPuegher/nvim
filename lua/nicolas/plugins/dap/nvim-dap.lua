@@ -21,4 +21,12 @@ return {
 			{ desc = "Debugging: Continue" },
 		},
 	},
+	config = function() -- Executed when nvim-dap loads
+		-- For conciseness
+		local dap = require("dap")
+		local dapui = require("dapui")
+		local dap_python = require("dap-python")
+		local python_path = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
+		local keymap = vim.keymap
+	end,
 }
