@@ -3,6 +3,7 @@ return {
 	lazy = true,
 	dependencies = {
 		"rcarriga/nvim-dap-ui", -- Adds UI to have a better debugging experience
+		"mfussenegger/nvim-dap-python", -- Python adapter for debugpy
 	},
 	keys = { -- Loads on key
 		{
