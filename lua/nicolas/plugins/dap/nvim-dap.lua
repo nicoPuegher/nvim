@@ -34,5 +34,16 @@ return {
 
 		-- Setup nvim-dap-python
 		dap_python.setup(python_path)
+
+		-- Open and clouse nvim-dap-ui automatically when debugging starts or ends
+		dap.listeners.after.event_initialized["dapui_config"] = function()
+			dapui.open()
+		end
+		dap.listeners.before.event_terminated["dapui_config"] = function()
+			dapui.close()
+		end
+		dap.listeners.before.event_exited["dapui_config"] = function()
+			dapui.close()
+		end
 	end,
 }
