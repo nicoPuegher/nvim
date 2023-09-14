@@ -45,5 +45,10 @@ return {
 		dap.listeners.before.event_exited["dapui_config"] = function()
 			dapui.close()
 		end
+
+		-- Custom keymaps to control debugging
+		keymap.set("n", "<localleader>do", dap.step_over, { desc = "Debugging: Step over" })
+		keymap.set("n", "<localleader>di", dap.step_into, { desc = "Debugging: Step into" })
+		keymap.set("n", "<localleader>dO", dap.step_out, { desc = "Debugging: Step out" })
 	end,
 }
