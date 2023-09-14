@@ -28,5 +28,11 @@ return {
 		local dap_python = require("dap-python")
 		local python_path = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
 		local keymap = vim.keymap
+
+		-- Setup nvim-dap-ui
+		dapui.setup()
+
+		-- Setup nvim-dap-python
+		dap_python.setup(python_path)
 	end,
 }
