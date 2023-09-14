@@ -9,6 +9,7 @@ return {
 
 		-- For conciseness
 		local formatting = null_ls.builtins.formatting
+		local diagnostics = null_ls.builtins.diagnostics
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 		local clear_autocmds = vim.api.nvim_clear_autocmds
 		local create_autocmd = vim.api.nvim_create_autocmd
@@ -16,13 +17,17 @@ return {
 
 		-- Setup null-ls.nvim
 		null_ls.setup({
-			-- Setup formatters
+			-- Setup formatters and linters
 			sources = {
+				-- Formatters
 				formatting.stylua.with({ -- Lua, only when config file exists
 					condition = function(utils)
 						return utils.root_has_file(".stylelua.toml")
 					end,
 				}),
+				formatting.black, -- Python
+				-- Linters
+				diagnostics.ruff, -- Python
 			},
 
 			-- Setup sync format on save (blocks nvim until results are applied)
