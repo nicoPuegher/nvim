@@ -79,5 +79,11 @@ return {
 			on_attach = on_attach, -- Attaches fn with keymaps
 			capabilities = capabilities, -- Attaches extra capabilities
 		})
+
+		-- Connect clangd and set it up (C language server)
+		lspconfig.clangd.setup({
+			on_attach = on_attach, -- Attaches fn with keymaps
+			capabilities = capabilities, -- Attaches extra capabilities
+		})
 	end,
 }
