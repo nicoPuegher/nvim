@@ -28,6 +28,11 @@ return {
 				formatting.black, -- Python
 				-- Linters
 				diagnostics.ruff, -- Python
+				diagnostics.cpplint.with({ -- C, only when config file exists
+					condition = function(utils)
+						return utils.root_has_file("cpplint.cfg")
+					end,
+				}),
 			},
 
 			-- Setup sync format on save (blocks nvim until results are applied)
