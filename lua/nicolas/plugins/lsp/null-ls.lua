@@ -26,6 +26,12 @@ return {
 					end,
 				}),
 				formatting.black, -- Python
+				formatting.clang_format.with({ -- C, only when config file exists
+					condition = function(utils)
+						return utils.root_has_file(".clang-format")
+					end,
+				}),
+
 				-- Linters
 				diagnostics.ruff, -- Python
 				diagnostics.cpplint.with({ -- C, only when config file exists
