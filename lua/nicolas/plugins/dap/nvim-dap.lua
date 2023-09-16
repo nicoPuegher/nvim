@@ -35,6 +35,34 @@ return {
 		-- Setup nvim-dap-python
 		dap_python.setup(python_path)
 
+		-- Setup codelldb (C adapter)
+		dap.adapters.codelldb = {
+			type = "server",
+			port = "${port}",
+			executable = {
+				command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb",
+				args = { "--port", "${port}" },
+			},
+		}
+
+		-- Config codelldb (C debugger)
+		dap.configurations.c = {
+			{
+				name = "Launch file",
+				type = "codelldb",
+				request = "launch",
+				program = function()
+					return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+				end,
+				cwd = "${workspaceFolder}",
+				stopOnEntry = false,
+				args = function()
+					local args_string = vim.fn.input("Arguments: ")
+					return vim.split(args_string, " +")
+				end,
+			},
+		}
+
 		-- Open and clouse nvim-dap-ui automatically when debugging starts or ends
 		dap.listeners.after.event_initialized["dapui_config"] = function()
 			dapui.open()
