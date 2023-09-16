@@ -7,7 +7,7 @@ return {
 
 		-- Setup treesitter
 		treesitter.setup({
-			ensure_installed = { "lua", "python" },
+			ensure_installed = { "lua", "python", "c" },
 			highlight = {
 				enable = true,
 			},
