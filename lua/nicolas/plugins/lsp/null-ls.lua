@@ -31,6 +31,11 @@ return {
 						return utils.root_has_file(".clang-format")
 					end,
 				}),
+				formatting.prettier.with({ -- Javascript, only when config file exists
+					condition = function(utils)
+						return utils.root_has_file(".prettierrc")
+					end,
+				}),
 
 				-- Linters
 				diagnostics.ruff, -- Python
