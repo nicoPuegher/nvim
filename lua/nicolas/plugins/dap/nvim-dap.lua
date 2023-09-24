@@ -4,11 +4,6 @@ return {
 	dependencies = {
 		"rcarriga/nvim-dap-ui", -- Adds UI to have a better debugging experience
 		"mfussenegger/nvim-dap-python", -- Python adapter for debugpy
-		"mxsdev/nvim-dap-vscode-js", -- Javascript adapter for js-debug-adapter
-		{
-			"microsoft/vscode-js-debug",
-			build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-		},
 	},
 	keys = { -- Loads on key
 		{
@@ -32,8 +27,6 @@ return {
 		local dapui = require("dapui")
 		local dap_python = require("dap-python")
 		local python_path = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
-		local dap_javascript = require("dap-vscode-js")
-		local javascript_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug"
 		local keymap = vim.keymap
 
 		-- Setup nvim-dap-ui
@@ -51,12 +44,6 @@ return {
 				args = { "--port", "${port}" },
 			},
 		}
-
-		-- Setup js-debug-adapter
-		dap_javascript.setup({
-			debugger_path = javascript_path,
-			adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
-		})
 
 		-- Config codelldb (C debugger)
 		dap.configurations.c = {
@@ -87,26 +74,6 @@ return {
 				end,
 			},
 		}
-
-		-- Config js-debug-adapter (Javascript/Typescript debugger)
-		for _, language in ipairs({ "javascript", "typescript", "javascriptreact" }) do
-			dap.configurations[language] = {
-				{
-					type = "pwa-node",
-					request = "launch",
-					name = "Launch file",
-					program = "${file}",
-					cwd = "${workspaceFolder}",
-				},
-				{
-					type = "pwa-node",
-					request = "attach",
-					name = "Attach",
-					processId = require("dap.utils").pick_process,
-					cwd = "${workspaceFolder}",
-				},
-			}
-		end
 
 		-- Open and clouse nvim-dap-ui automatically when debugging starts or ends
 		dap.listeners.after.event_initialized["dapui_config"] = function()
