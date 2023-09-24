@@ -91,6 +91,20 @@ return {
 			},
 		}
 
+		-- Config js-debug-adapter (Javascript/Typescript debugger)
+		for _, language in ipairs({ "javascript", "typescript" }) do
+			dap.configurations[language] = {
+				-- Runs a server automatically, for example express.js
+				{
+					type = "pwa-node",
+					request = "launch",
+					name = "Launch file",
+					program = "${file}",
+					cwd = "${workspaceFolder}",
+				},
+			}
+		end
+
 		-- Open and clouse nvim-dap-ui automatically when debugging starts or ends
 		dap.listeners.after.event_initialized["dapui_config"] = function()
 			dapui.open()
