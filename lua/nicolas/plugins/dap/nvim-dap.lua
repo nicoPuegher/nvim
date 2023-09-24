@@ -45,6 +45,22 @@ return {
 			},
 		}
 
+		-- Setup js-debug-adapter (Javascript & Typescript adapter)
+		for _, js_adapters in ipairs({ "pwa-node", "pwa-chrome" }) do
+			dap.adapters[js_adapters] = {
+				type = "server",
+				host = "localhost",
+				port = "${port}",
+				executable = {
+					command = "node",
+					args = {
+						vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+						"${port}",
+					},
+				},
+			}
+		end
+
 		-- Config codelldb (C debugger)
 		dap.configurations.c = {
 			{
