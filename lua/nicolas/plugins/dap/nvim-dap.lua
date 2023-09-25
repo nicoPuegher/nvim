@@ -105,6 +105,23 @@ return {
 			}
 		end
 
+		-- Config js-debug-adapter (Javascript/Typescript debugger)
+		for _, language in ipairs({ "javascriptreact", "typescriptreact" }) do
+			dap.configurations[language] = {
+				-- Server running needed, for example npm run dev with vite port 5173
+				{
+					type = "pwa-chrome",
+					name = "Launch Chrome to debug client",
+					request = "launch",
+					port = 9222,
+					url = "http://localhost:5173",
+					sourceMaps = true,
+					protocol = "inspector",
+					webRoot = "${workspaceFolder}/src",
+				},
+			}
+		end
+
 		-- Open and clouse nvim-dap-ui automatically when debugging starts or ends
 		dap.listeners.after.event_initialized["dapui_config"] = function()
 			dapui.open()
