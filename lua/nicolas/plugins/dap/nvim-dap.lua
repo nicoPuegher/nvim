@@ -27,6 +27,8 @@ return {
 		local dapui = require("dapui")
 		local dap_python = require("dap-python")
 		local python_path = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
+		local c_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb"
+		local js_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
 		local keymap = vim.keymap
 
 		-- Setup nvim-dap-ui
@@ -40,12 +42,26 @@ return {
 			type = "server",
 			port = "${port}",
 			executable = {
-				command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb",
+				command = c_path,
 				args = { "--port", "${port}" },
 			},
 		}
 
+		-- Setup js-debug-adapter (Javascript & Typescript adapter)
+		for _, js_adapters in ipairs({ "pwa-node", "pwa-chrome" }) do
+			dap.adapters[js_adapters] = {
+				type = "server",
+				host = "localhost",
+				port = "${port}",
+				executable = {
+					command = "node",
+					args = { js_path, "${port}" },
+				},
+			}
+		end
+
 		-- Config codelldb (C debugger)
+		-- Debugger needs a compiled file like: clang --debug program.c -o program
 		dap.configurations.c = {
 			{
 				-- Single file
@@ -74,6 +90,37 @@ return {
 				end,
 			},
 		}
+
+		-- Config js-debug-adapter (Javascript/Typescript debugger)
+		for _, language in ipairs({ "javascript", "typescript" }) do
+			dap.configurations[language] = {
+				-- Runs a server automatically, for example express.js
+				{
+					type = "pwa-node",
+					request = "launch",
+					name = "Launch file",
+					program = "${file}",
+					cwd = "${workspaceFolder}",
+				},
+			}
+		end
+
+		-- Config js-debug-adapter (Javascript/Typescript debugger)
+		for _, language in ipairs({ "javascriptreact", "typescriptreact" }) do
+			dap.configurations[language] = {
+				-- Server running needed, for example npm run dev with vite port 5173
+				{
+					type = "pwa-chrome",
+					name = "Launch Chrome to debug client",
+					request = "launch",
+					port = 9222,
+					url = "http://localhost:5173",
+					sourceMaps = true,
+					protocol = "inspector",
+					webRoot = "${workspaceFolder}/src",
+				},
+			}
+		end
 
 		-- Open and clouse nvim-dap-ui automatically when debugging starts or ends
 		dap.listeners.after.event_initialized["dapui_config"] = function()
