@@ -85,5 +85,11 @@ return {
 			on_attach = on_attach, -- Attaches fn with keymaps
 			capabilities = capabilities, -- Attaches extra capabilities
 		})
+
+		-- Connect typescript-language-server and set it up
+		lspconfig.tsserver.setup({
+			on_attach = on_attach, -- Attaches fn with keymaps
+			capabilities = capabilities, -- Attaches extra capabilities
+		})
 	end,
 }

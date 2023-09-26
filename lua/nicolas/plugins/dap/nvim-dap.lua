@@ -45,6 +45,22 @@ return {
 			},
 		}
 
+		-- Setup js-debug-adapter (Javascript & Typescript adapter)
+		for _, js_adapters in ipairs({ "pwa-node", "pwa-chrome" }) do
+			dap.adapters[js_adapters] = {
+				type = "server",
+				host = "localhost",
+				port = "${port}",
+				executable = {
+					command = "node",
+					args = {
+						vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+						"${port}",
+					},
+				},
+			}
+		end
+
 		-- Config codelldb (C debugger)
 		dap.configurations.c = {
 			{
@@ -74,6 +90,37 @@ return {
 				end,
 			},
 		}
+
+		-- Config js-debug-adapter (Javascript/Typescript debugger)
+		for _, language in ipairs({ "javascript", "typescript" }) do
+			dap.configurations[language] = {
+				-- Runs a server automatically, for example express.js
+				{
+					type = "pwa-node",
+					request = "launch",
+					name = "Launch file",
+					program = "${file}",
+					cwd = "${workspaceFolder}",
+				},
+			}
+		end
+
+		-- Config js-debug-adapter (Javascript/Typescript debugger)
+		for _, language in ipairs({ "javascriptreact", "typescriptreact" }) do
+			dap.configurations[language] = {
+				-- Server running needed, for example npm run dev with vite port 5173
+				{
+					type = "pwa-chrome",
+					name = "Launch Chrome to debug client",
+					request = "launch",
+					port = 9222,
+					url = "http://localhost:5173",
+					sourceMaps = true,
+					protocol = "inspector",
+					webRoot = "${workspaceFolder}/src",
+				},
+			}
+		end
 
 		-- Open and clouse nvim-dap-ui automatically when debugging starts or ends
 		dap.listeners.after.event_initialized["dapui_config"] = function()
