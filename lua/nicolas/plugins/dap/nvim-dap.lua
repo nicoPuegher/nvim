@@ -28,6 +28,7 @@ return {
 		local dap_python = require("dap-python")
 		local python_path = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
 		local c_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb"
+		local js_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
 		local keymap = vim.keymap
 
 		-- Setup nvim-dap-ui
@@ -54,10 +55,7 @@ return {
 				port = "${port}",
 				executable = {
 					command = "node",
-					args = {
-						vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
-						"${port}",
-					},
+					args = { js_path, "${port}" },
 				},
 			}
 		end
