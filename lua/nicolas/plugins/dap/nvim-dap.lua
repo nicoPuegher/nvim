@@ -27,6 +27,7 @@ return {
 		local dapui = require("dapui")
 		local dap_python = require("dap-python")
 		local python_path = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
+		local c_path = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb"
 		local keymap = vim.keymap
 
 		-- Setup nvim-dap-ui
@@ -40,7 +41,7 @@ return {
 			type = "server",
 			port = "${port}",
 			executable = {
-				command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb",
+				command = c_path,
 				args = { "--port", "${port}" },
 			},
 		}
