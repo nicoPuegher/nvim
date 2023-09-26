@@ -62,6 +62,7 @@ return {
 		end
 
 		-- Config codelldb (C debugger)
+		-- Debugger needs a compiled file like: clang --debug program.c -o program
 		dap.configurations.c = {
 			{
 				-- Single file
