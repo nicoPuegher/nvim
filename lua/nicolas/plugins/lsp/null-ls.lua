@@ -36,6 +36,9 @@ return {
 						return utils.root_has_file(".prettierrc.json")
 					end,
 				}),
+				formatting.sql_formatter.with({
+					extra_args = {"--config", ".sqlformatterrc.json"}
+				}),
 
 				-- Linters
 				diagnostics.ruff, -- Python
@@ -48,6 +51,9 @@ return {
 					condition = function(utils)
 						return utils.root_has_file(".eslintrc.json")
 					end,
+				}),
+				diagnostics.sqlfluff.with({
+					extra_args = { "--dialect", "sqlite" },
 				}),
 			},
 
