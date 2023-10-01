@@ -91,5 +91,11 @@ return {
 			on_attach = on_attach, -- Attaches fn with keymaps
 			capabilities = capabilities, -- Attaches extra capabilities
 		})
+
+		-- Connect sqlls and set it up (SQL language server)
+		lspconfig.sqlls.setup({
+			on_attach = on_attach, -- Attaches fn with keymaps
+			capabilities = capabilities, -- Attaches extra capabilities
+		})
 	end,
 }
