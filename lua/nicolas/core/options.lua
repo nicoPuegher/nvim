@@ -21,3 +21,4 @@ opt.splitbelow = true -- Add horizontal window split to the bottom
 
 -- Miscellaneous
 opt.swapfile = false -- Do not use swap files
+opt.scrolloff = 8 -- Minimal number of screen lines to keep above or below
