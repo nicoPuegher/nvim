@@ -18,3 +18,6 @@ opt.expandtab = false -- Default prevention of unintentional white space
 -- Window management
 opt.splitright = true -- Add vertical window split to the right
 opt.splitbelow = true -- Add horizontal window split to the bottom
+
+-- Miscellaneous
+opt.swapfile = false -- Do not use swap files
