@@ -22,3 +22,5 @@ opt.splitbelow = true -- Add horizontal window split to the bottom
 -- Miscellaneous
 opt.swapfile = false -- Do not use swap files
 opt.scrolloff = 8 -- Minimal number of screen lines to keep above or below
+opt.incsearch = true -- Typing updates search highlight
+opt.hlsearch = true -- Highlight previous search pattern matches
