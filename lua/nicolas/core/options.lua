@@ -25,3 +25,4 @@ opt.scrolloff = 8 -- Minimal number of screen lines to keep above or below
 opt.incsearch = true -- Typing updates search highlight
 opt.hlsearch = true -- Highlight previous search pattern matches
 opt.ignorecase = true -- Ignore case in search pattern
+opt.smartcase = true -- Override ignorecase when writing mixed case
