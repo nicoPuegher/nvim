@@ -20,3 +20,6 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- Visual mode selection
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+-- Line manipulation
+keymap.set("n", "J", "mzJ`z", { desc = "Lift line below without cursor relocation" })
