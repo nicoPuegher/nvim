@@ -25,4 +25,5 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- Line manipulation
 keymap.set("n", "J", "mzJ`z", { desc = "Lift line below without cursor relocation" })
 
--- keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+-- Plus register / systerm clipboard
+keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
