@@ -1,2 +1,2 @@
 require("nicolas.core.options")
-require("nicolas.core.general-keymaps")
+require("nicolas.core.keymaps")
