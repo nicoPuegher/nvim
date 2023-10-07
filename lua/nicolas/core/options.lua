@@ -4,16 +4,14 @@ local opt = vim.opt -- For conciseness
 opt.number = true -- Display line numbers
 opt.relativenumber = true -- Display relative line numbers to current line
 opt.signcolumn = "yes" -- Display sign column to avoid content shifting
-opt.wrap = false -- Disable line wrapping
-opt.guicursor = "" -- Use fat cursor always
+opt.guicursor = { "a:block" } -- Use block cursor always
 opt.cursorline = true -- Highlight current line
 opt.termguicolors = true -- Enable 24-bit RGB color in the terminal
 
 -- Tabs and indentations
 opt.tabstop = 4 -- Make <Tab> 4 character cells wide
 opt.shiftwidth = 4 -- Use <Tab> for indentation
-opt.softtabstop = 0 -- Default prevention of unintentional white space
-opt.expandtab = false -- Default prevention of unintentional white space
+opt.smartindent = true
 
 -- Window management
 opt.splitright = true -- Add vertical window split to the right
@@ -21,8 +19,7 @@ opt.splitbelow = true -- Add horizontal window split to the bottom
 
 -- Miscellaneous
 opt.swapfile = false -- Do not use swap files
-opt.scrolloff = 8 -- Minimal number of screen lines to keep above or below
-opt.incsearch = true -- Typing updates search highlight
-opt.hlsearch = true -- Highlight previous search pattern matches
+opt.scrolloff = 10 -- Minimal number of screen lines to keep above or below
 opt.ignorecase = true -- Ignore case in search pattern
 opt.smartcase = true -- Override ignorecase when writing mixed case
+opt.breakindent = true -- Respect current indent when wrapping
