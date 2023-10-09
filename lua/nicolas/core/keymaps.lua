@@ -27,3 +27,11 @@ keymap.set("n", "J", "mzJ`z", { desc = "Lift line below without cursor relocatio
 
 -- Plus register / systerm clipboard
 keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
+
+-- Text manipulation
+keymap.set(
+	"n",
+	"<leader>ec",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = "Edit current under cursor and replace all" }
+)
