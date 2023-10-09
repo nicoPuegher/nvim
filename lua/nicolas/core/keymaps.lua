@@ -35,3 +35,6 @@ keymap.set(
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 	{ desc = "Edit current under cursor and replace all" }
 )
+
+-- File manipulation
+keymap.set("n", "<leader>ex", "<cmd>!chmod +x %<CR>", { desc = "Make file an executable" })
