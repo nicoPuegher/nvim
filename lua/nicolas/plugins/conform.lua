@@ -13,5 +13,12 @@ return {
 				timeout_ms = 500,
 			},
 		})
+
+		vim.keymap.set({ 'n', 'v' }, '<leader>fc', function()
+			conform.format({
+				lsp_fallback = true,
+				timeout_ms = 500,
+			})
+		end, { desc = '[F]ormat [C]ode' })
 	end,
 }
