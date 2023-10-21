@@ -10,3 +10,7 @@ vim.opt.termguicolors = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
+
+-- Window management
+vim.opt.splitright = true
+vim.opt.splitbelow = true
