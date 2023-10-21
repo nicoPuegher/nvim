@@ -14,3 +14,10 @@ vim.opt.smartindent = true
 -- Window management
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Miscellaneous
+vim.opt.swapfile = false
+vim.opt.scrolloff = 10
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.optbreakindent = true
