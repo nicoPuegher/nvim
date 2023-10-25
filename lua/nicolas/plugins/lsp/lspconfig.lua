@@ -3,7 +3,7 @@ return {
 	event = { 'BufReadPre', 'BufNewFile' },
 	dependencies = {
 		'williamboman/mason.nvim',
-      	'williamboman/mason-lspconfig.nvim',
+		'williamboman/mason-lspconfig.nvim',
 		{ 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 		'folke/neodev.nvim',
 	},
@@ -31,7 +31,7 @@ return {
 					settings = utils.servers[server_name],
 					filetypes = (utils.servers[server_name] or {}).filetypes,
 				})
-			end
+			end,
 		})
 	end,
 }
