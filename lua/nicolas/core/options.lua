@@ -1,25 +1,23 @@
-local opt = vim.opt -- For conciseness
+-- User interface
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = 'yes'
+vim.opt.guicursor = { 'a:block' }
+vim.opt.cursorline = true
+vim.opt.termguicolors = true
 
--- UI
-opt.number = true -- Display line numbers
-opt.relativenumber = true -- Display relative line numbers to current line
-opt.signcolumn = "yes" -- Display sign column to avoid content shifting
-opt.guicursor = { "a:block" } -- Use block cursor always
-opt.cursorline = true -- Highlight current line
-opt.termguicolors = true -- Enable 24-bit RGB color in the terminal
-
--- Tabs and indentations
-opt.tabstop = 4 -- Make <Tab> 4 character cells wide
-opt.shiftwidth = 4 -- Use <Tab> for indentation
-opt.smartindent = true
+-- Tabs and indentation
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.smartindent = true
 
 -- Window management
-opt.splitright = true -- Add vertical window split to the right
-opt.splitbelow = true -- Add horizontal window split to the bottom
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Miscellaneous
-opt.swapfile = false -- Do not use swap files
-opt.scrolloff = 10 -- Minimal number of screen lines to keep above or below
-opt.ignorecase = true -- Ignore case in search pattern
-opt.smartcase = true -- Override ignorecase when writing mixed case
-opt.breakindent = true -- Respect current indent when wrapping
+vim.opt.swapfile = false
+vim.opt.scrolloff = 10
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.optbreakindent = true

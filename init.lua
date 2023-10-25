@@ -1,2 +1,2 @@
-require("nicolas.core")
-require("nicolas.lazy")
+require('nicolas.core')
+require('nicolas.lazy')
