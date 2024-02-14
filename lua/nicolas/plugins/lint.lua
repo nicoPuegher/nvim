@@ -7,6 +7,7 @@ return {
 		lint.linters_by_ft = {
 			lua = { 'selene' },
 			html = { 'htmlhint' },
+			css = { 'stylelint' },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
