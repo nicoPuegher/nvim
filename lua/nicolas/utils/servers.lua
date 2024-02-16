@@ -12,5 +12,8 @@ return {
 				},
 			},
 		},
+		html = {},
+		stylelint_lsp = {},
+		tsserver = {},
 	},
 }
