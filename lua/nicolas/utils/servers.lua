@@ -13,5 +13,6 @@ return {
 			},
 		},
 		html = {},
+		stylelint_lsp = {},
 	},
 }
