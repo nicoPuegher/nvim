@@ -11,8 +11,10 @@ return {
 	config = function()
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
-		require('luasnip.loaders.from_vscode').lazy_load()
+		local loaders = require('luasnip.loaders.from_vscode')
+
 		luasnip.config.setup({})
+		loaders.lazy_load()
 
 		---@diagnostic disable-next-line missing-fields
 		cmp.setup({
