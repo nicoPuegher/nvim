@@ -15,6 +15,7 @@ return {
 		local mappings = require('nicolas.helper.cmp-mappings').cmp_mappings
 
 		luasnip.config.setup({})
+
 		loaders.lazy_load()
 
 		---@diagnostic disable-next-line missing-fields
