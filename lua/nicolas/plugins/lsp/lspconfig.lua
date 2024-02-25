@@ -4,24 +4,23 @@ return {
 	dependencies = {
 		'williamboman/mason.nvim',
 		'williamboman/mason-lspconfig.nvim',
-		{ 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+		{ 'j-hui/fidget.nvim', opts = {} },
 		'folke/neodev.nvim',
 	},
 	config = function()
 		local mason = require('mason')
 		local mason_lspconfig = require('mason-lspconfig')
 		local neodev = require('neodev')
-
-		mason.setup()
-		mason_lspconfig.setup()
-		neodev.setup()
-
 		local utils = require('nicolas.utils')
 		local lspconfig = require('lspconfig')
+
+		mason.setup()
 
 		mason_lspconfig.setup({
 			ensure_installed = vim.tbl_keys(utils.servers),
 		})
+
+		neodev.setup()
 
 		mason_lspconfig.setup_handlers({
 			function(server_name)
