@@ -20,4 +20,4 @@ vim.opt.swapfile = false
 vim.opt.scrolloff = 10
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.optbreakindent = true
+vim.opt.breakindent = true
