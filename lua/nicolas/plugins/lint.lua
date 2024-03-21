@@ -18,6 +18,7 @@ return {
 			callback = function()
 				lint.try_lint()
 			end,
+			desc = 'Lint code autocmd',
 		})
 
 		vim.keymap.set('n', '<leader>lc', function()
