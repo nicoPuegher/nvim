@@ -6,9 +6,7 @@ vim.opt.guicursor = { 'a:block' }
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 
--- Tabs and indentation
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+-- Indentation
 vim.opt.smartindent = true
 
 -- Window management
