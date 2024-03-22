@@ -8,6 +8,7 @@ opt.signcolumn = 'yes'
 opt.guicursor = { 'a:block' }
 opt.cursorline = true
 opt.termguicolors = true
+opt.wrap = false
 
 -- Indentation
 opt.smartindent = true
