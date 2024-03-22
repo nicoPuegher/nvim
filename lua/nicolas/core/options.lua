@@ -18,6 +18,9 @@ opt.splitright = true
 opt.splitbelow = true
 opt.inccommand = 'split'
 
+-- Timer
+opt.updatetime = 250
+
 -- Miscellaneous
 opt.swapfile = false
 opt.scrolloff = 10
