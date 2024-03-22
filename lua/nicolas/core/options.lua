@@ -16,6 +16,7 @@ opt.smartindent = true
 -- Window management
 opt.splitright = true
 opt.splitbelow = true
+opt.inccommand = 'split'
 
 -- Miscellaneous
 opt.swapfile = false
