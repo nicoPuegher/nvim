@@ -17,3 +17,4 @@ vim.keymap.set('n', 'n', 'nzzzv') -- Downwards in highlight search, keep cursor 
 vim.keymap.set('n', '<leader>Y', '"+Y') -- Yank current line to system clipboard including end of line
 vim.keymap.set('v', '<leader>y', '"+y') -- Yank selected text to system clipboard
 vim.keymap.set('n', '<leader>d', '"*dd') -- Delete current line to system clipboard
+vim.keymap.set('v', '<leader>d', '"*dd') -- Delete selected lines to system clipboard
