@@ -1,21 +1,33 @@
+-- For conciseness
+local opt = vim.opt
+
 -- User interface
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.signcolumn = 'yes'
-vim.opt.guicursor = { 'a:block' }
-vim.opt.cursorline = true
-vim.opt.termguicolors = true
+opt.number = true
+opt.relativenumber = true
+opt.scrolloff = 10
+opt.signcolumn = 'yes'
+opt.wrap = false
+opt.guicursor = { 'a:block' }
+opt.cursorline = true
+opt.termguicolors = true
 
 -- Indentation
-vim.opt.smartindent = true
+opt.smartindent = true
+opt.breakindent = true
 
 -- Window management
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+opt.splitright = true
+opt.splitbelow = true
 
--- Miscellaneous
-vim.opt.swapfile = false
-vim.opt.scrolloff = 10
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.breakindent = true
+-- Command line
+opt.inccommand = 'split'
+
+-- Timer
+opt.updatetime = 250
+
+-- Search
+opt.ignorecase = true
+opt.smartcase = true
+
+-- Backup
+opt.swapfile = false
