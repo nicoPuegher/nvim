@@ -11,3 +11,4 @@ vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv") -- Move selected line downwards
 vim.keymap.set('n', '<C-u', '<C-u>zz') -- Half page jump upwards
 vim.keymap.set('n', '<C-d>', '<C-d>zz') -- Half page jump downwards
 vim.keymap.set('n', 'N', 'Nzzzv') -- Upwards in highlight search, keep cursor in the middle
+vim.keymap.set('n', 'n', 'nzzzv') -- Downwards in highlight search, keep cursor in the middle
