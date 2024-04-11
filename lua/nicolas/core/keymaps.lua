@@ -18,3 +18,6 @@ vim.keymap.set('n', '<leader>Y', '"+Y') -- Yank current line to system clipboard
 vim.keymap.set('v', '<leader>y', '"+y') -- Yank selected text to system clipboard
 vim.keymap.set('n', '<leader>d', '"*dd') -- Delete current line to system clipboard
 vim.keymap.set('v', '<leader>d', '"*dd') -- Delete selected lines to system clipboard
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
