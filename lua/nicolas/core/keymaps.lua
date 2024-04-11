@@ -26,3 +26,4 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagn
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>zz', { desc = 'Go to next item in the quickfix list' })
 vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>zz', { desc = 'Go to prev item in the quickfix list' })
+vim.keymap.set('n', '<leader>co', '<cmd>copen<CR>', { desc = '[C]ompiler [O]pen (Quickfix list)' })
