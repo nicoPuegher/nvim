@@ -31,3 +31,6 @@ opt.smartcase = true
 
 -- Backup
 opt.swapfile = false
+
+-- Nerd font
+vim.g.have_nerd_font = true
