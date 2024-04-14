@@ -19,6 +19,4 @@ local function cmp_mappings(cmp, luasnip)
 	}
 end
 
-return {
-	cmp_mappings = cmp_mappings,
-}
+return cmp_mappings
