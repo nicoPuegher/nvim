@@ -12,7 +12,7 @@ return {
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
 		local loaders = require('luasnip.loaders.from_vscode')
-		local mappings = require('nicolas.helper.cmp-mappings').cmp_mappings
+		local mappings = require('nicolas.helper.cmp_mappings').cmp_mappings
 
 		luasnip.config.setup({})
 
