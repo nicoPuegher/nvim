@@ -17,7 +17,7 @@ return {
 		if vim.lsp.inlay_hint then
 			vim.keymap.set('n', '<leader>th', function()
 				vim.lsp.inlay_hint(0, nil)
-			end, { desc = '[T]oggle Inlay [H]ints' })
+			end, { desc = '[T]oggle inlay [H]ints' })
 		end
 	end,
 }
