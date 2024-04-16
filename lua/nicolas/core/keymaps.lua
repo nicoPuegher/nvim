@@ -1,3 +1,4 @@
+-- Leader keys
 vim.g.mapleader = ' '
 
 -- File explorer
