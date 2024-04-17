@@ -13,7 +13,7 @@ return {
 		local neodev = require('neodev')
 		local utils = require('nicolas.utils')
 		local lspconfig = require('lspconfig')
-		require('nicolas.helper.lspconfig_keymaps')
+		require('nicolas.plugins.keymaps.lspconfig_keymaps')
 
 		mason.setup()
 
