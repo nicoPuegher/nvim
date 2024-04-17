@@ -12,7 +12,7 @@ return {
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
 		local loaders = require('luasnip.loaders.from_vscode')
-		local mappings = require('nicolas.helper.cmp_mappings')
+		local keymaps = require('nicolas.plugins.keymaps.cmp_keymaps')
 
 		luasnip.config.setup({})
 
@@ -25,7 +25,7 @@ return {
 					luasnip.lsp_expand(args.body)
 				end,
 			},
-			mapping = cmp.mapping.preset.insert(mappings(cmp, luasnip)),
+			mapping = cmp.mapping.preset.insert(keymaps(cmp, luasnip)),
 			sources = {
 				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },

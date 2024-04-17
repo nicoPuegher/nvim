@@ -16,10 +16,10 @@ return {
 	},
 	config = function()
 		local telescope = require('telescope')
-		local telescope_settings = require('nicolas.helper.telescope_settings')
+		local telescope_settings = require('nicolas.plugins.settings.telescope_settings')
 		local get_dropdown = require('telescope.themes').get_dropdown
 		local builtin = require('telescope.builtin')
-		local telescope_keymaps = require('nicolas.helper.telescope_keymaps')
+		local telescope_keymaps = require('nicolas.plugins.keymaps.telescope_keymaps')
 
 		telescope.setup(telescope_settings(get_dropdown))
 

@@ -5,12 +5,12 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>fe', vim.cmd.Ex, { desc = 'Open [F]ile [E]xplorer' })
 
 -- Text manipulation
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = '(Vm) - Move selected line downwards [J]' })
-vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { desc = '(Vm) - Move selected line upwards [K]' })
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = '(Vm) Move selected line downwards [J]' })
+vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { desc = '(Vm) Move selected line upwards [K]' })
 
 -- Cursor movement
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = '(Nm) - Half page jump <C>[D]ownwards' })
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = '(Nm) - Half page jump <C>[U]pwards' })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = '(Nm) Half page jump <C>[D]ownwards' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = '(Nm) Half page jump <C>[U]pwards' })
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Keep cursor in the middle for next item in highlight search' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Keep cursor in the middle for prev item in highlight search' })
 
