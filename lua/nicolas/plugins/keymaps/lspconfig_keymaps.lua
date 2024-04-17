@@ -1,30 +1,35 @@
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('custom-lsp-attach', { clear = true }),
 	callback = function(event)
-		local map = function(keys, func, desc)
-			vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-		end
+		local map = require('nicolas.helper.map')
+		local telescope = require('telescope.builtin')
 
-		map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-		map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-		map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-		map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-		map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-		map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-		map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-		map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-		map('K', vim.lsp.buf.hover, 'Hover documentation')
-		map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+		local buffer = vim.lsp.buf
+		local opts = {
+			bufnr = event.buf,
+			identifier = 'LSP: ',
+		}
+
+		map('n', 'gd', telescope.lsp_definitions, opts, '[G]oto [D]efinition')
+		map('n', 'gr', telescope.lsp_references, opts, '[G]oto [R]eferences')
+		map('n', 'gI', telescope.lsp_implementations, opts, '[G]oto [I]mplementation')
+		map('n', '<leader>D', telescope.lsp_type_definitions, opts, 'Type [D]efinition')
+		map('n', '<leader>ds', telescope.lsp_document_symbols, opts, '[D]ocument [S]ymbols')
+		map('n', '<leader>ws', telescope.lsp_dynamic_workspace_symbols, opts, '[W]orkspace [S]ymbols')
+		map('n', '<leader>rn', buffer.rename, opts, '[R]e[N]ame')
+		map('n', '<leader>ca', buffer.code_action, opts, '[C]ode [A]ction')
+		map('n', 'K', buffer.hover, opts, '[H]over documentation')
+		map('n', 'gD', buffer.declaration, opts, '[G]oto [D]eclaration')
 
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 		if client and client.server_capabilities.documentHighlightProvider then
 			vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-				buffer = event.buf,
-				callback = vim.lsp.buf.document_highlight,
+				buffer = opts.bufnr,
+				callback = buffer.document_highlight,
 			})
 			vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-				buffer = event.buf,
-				callback = vim.lsp.buf.clear_references,
+				buffer = opts.bufnr,
+				callback = buffer.clear_references,
 			})
 		end
 	end,
