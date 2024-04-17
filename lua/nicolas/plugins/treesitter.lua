@@ -13,7 +13,7 @@ return {
 					'indent',
 					'incremental_selection',
 				},
-				ensure_installed = { 'lua', 'html', 'css', 'javascript' },
+				ensure_installed = { 'lua', 'vimdoc', 'html', 'css', 'javascript' },
 				auto_install = false,
 				sync_install = false,
 				ignore_install = {},
