@@ -1,38 +1,45 @@
+local map = require('nicolas.helper.map')
+
+local opts = {
+	bufnr = vim.api.nvim_get_current_buf(),
+	identifier = 'Telescope: ',
+}
+
 local function builtin_keymaps(builtin)
-	vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-	vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-	vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-	vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect telescope' })
-	vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-	vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-	vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-	vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-	vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch recent files ("." for repeat)' })
-	vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+	map('n', '<leader>sh', builtin.help_tags, opts, '[S]earch [H]elp')
+	map('n', '<leader>sk', builtin.keymaps, opts, '[S]earch [K]eymaps')
+	map('n', '<leader>sf', builtin.find_files, opts, '[S]earch [F]iles')
+	map('n', '<leader>ss', builtin.builtin, opts, '[S]earch [S]elect telescope')
+	map('n', '<leader>sw', builtin.grep_string, opts, '[S]earch current [W]ord')
+	map('n', '<leader>sg', builtin.live_grep, opts, '[S]earch by [G]rep')
+	map('n', '<leader>sd', builtin.diagnostics, opts, '[S]earch [D]iagnostics')
+	map('n', '<leader>sr', builtin.resume, opts, '[S]earch [R]esume')
+	map('n', '<leader>s.', builtin.oldfiles, opts, '[S]earch recent files ("." for repeat)')
+	map('n', '<leader><leader>', builtin.buffers, opts, '[ ] Find existing buffers')
 end
 
 local function current_buffer_fuzzy_find(builtin, get_dropdown)
-	vim.keymap.set('n', '<leader>/', function()
+	map('n', '<leader>/', function()
 		builtin.current_buffer_fuzzy_find(get_dropdown({
 			winblend = 10,
 			previewer = false,
 		}))
-	end, { desc = '[/] Fuzzily search in current buffer' })
+	end, opts, '[/] Fuzzily search in current buffer')
 end
 
 local function live_grep(builtin)
-	vim.keymap.set('n', '<leader>s/', function()
+	map('n', '<leader>s/', function()
 		builtin.live_grep({
 			grep_open_files = true,
 			prompt_title = 'Live grep in open files',
 		})
-	end, { desc = '[S]earch [/] in open files' })
+	end, opts, '[S]earch [/] in open files')
 end
 
 local function find_neovim_files(builtin)
-	vim.keymap.set('n', '<leader>sn', function()
+	map('n', '<leader>sn', function()
 		builtin.find_files({ cwd = vim.fn.stdpath('config') })
-	end, { desc = '[S]earch [N]eovim files' })
+	end, opts, '[S]earch [N]eovim files')
 end
 
 local function indent_for_preview_files()
