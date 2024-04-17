@@ -1,7 +1,6 @@
 local map = require('nicolas.helper.map')
 
 local opts = {
-	bufnr = vim.api.nvim_get_current_buf(),
 	identifier = 'Telescope: ',
 }
 
