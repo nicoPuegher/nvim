@@ -6,12 +6,8 @@ return {
 
 		gitsigns.setup({
 			attach_to_untracked = true,
-			on_attach = function(bufnr)
-				local map = function(mode, keys, func, desc)
-					vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = 'Gitsigns: ' .. desc })
-				end
-
-				gitsigns_keymaps(map, gitsigns)
+			on_attach = function()
+				gitsigns_keymaps(gitsigns)
 			end,
 		})
 	end,
