@@ -1,4 +1,4 @@
-local function cmp_mappings(cmp, luasnip)
+local function cmp_keymaps(cmp, luasnip)
 	return {
 		['<C-n>'] = cmp.mapping.select_next_item(),
 		['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -19,4 +19,4 @@ local function cmp_mappings(cmp, luasnip)
 	}
 end
 
-return cmp_mappings
+return cmp_keymaps
