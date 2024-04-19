@@ -18,11 +18,11 @@ return {
 			},
 		})
 
-		vim.keymap.set({ 'n', 'v' }, '<leader>fc', function()
+		vim.keymap.set({ 'n', 'v' }, '<leader>cf', function()
 			conform.format({
 				lsp_fallback = true,
 				timeout_ms = 500,
 			})
-		end, { desc = '[F]ormat [C]ode' })
+		end, { desc = '[C]ode [F]ormat' })
 	end,
 }
