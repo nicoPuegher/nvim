@@ -21,8 +21,8 @@ return {
 			desc = 'Lint code autocmd',
 		})
 
-		vim.keymap.set('n', '<leader>lc', function()
+		vim.keymap.set('n', '<leader>cl', function()
 			lint.try_lint()
-		end, { desc = '[L]int [C]ode' })
+		end, { desc = '[C]ode [L]int' })
 	end,
 }
