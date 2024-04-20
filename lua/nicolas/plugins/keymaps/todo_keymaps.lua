@@ -1,12 +1,8 @@
 local map = require('nicolas.helper.map')
 
-local opts = {
-	identifier = 'Todo: ',
-}
-
 local function todo_keymaps()
-	map('n', '<leader>tt', '<cmd>TodoTelescope<CR>', opts, '[T]odo [T]elescope')
-	map('n', '<leader>tq', '<cmd>TodoQuickFix<CR>', opts, '[T]odo [Q]uickfix list')
+	map('n', '<leader>nt', '<cmd>TodoTelescope<CR>', {}, '[N]otes [T]elescope')
+	map('n', '<leader>nq', '<cmd>TodoQuickFix<CR>', {}, '[N]otes [Q]uickfix')
 end
 
 return todo_keymaps
