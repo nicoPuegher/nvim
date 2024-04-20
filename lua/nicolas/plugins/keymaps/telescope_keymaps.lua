@@ -1,44 +1,39 @@
 local map = require('nicolas.helper.map')
 
-local opts = {
-	identifier = 'Telescope: ',
-}
-
 local function builtin_keymaps(builtin)
-	map('n', '<leader>sh', builtin.help_tags, opts, '[S]earch [H]elp')
-	map('n', '<leader>sk', builtin.keymaps, opts, '[S]earch [K]eymaps')
-	map('n', '<leader>sf', builtin.find_files, opts, '[S]earch [F]iles')
-	map('n', '<leader>ss', builtin.builtin, opts, '[S]earch [S]elect telescope')
-	map('n', '<leader>sw', builtin.grep_string, opts, '[S]earch current [W]ord')
-	map('n', '<leader>sg', builtin.live_grep, opts, '[S]earch by [G]rep')
-	map('n', '<leader>sd', builtin.diagnostics, opts, '[S]earch [D]iagnostics')
-	map('n', '<leader>sr', builtin.resume, opts, '[S]earch [R]esume')
-	map('n', '<leader>s.', builtin.oldfiles, opts, '[S]earch recent files ("." for repeat)')
-	map('n', '<leader><leader>', builtin.buffers, opts, '[ ] Find existing buffers')
+	map('n', '<leader>sh', builtin.help_tags, {}, '[S]earch [H]elp')
+	map('n', '<leader>sk', builtin.keymaps, {}, '[S]earch [K]eymaps')
+	map('n', '<leader>sf', builtin.find_files, {}, '[S]earch [F]iles')
+	map('n', '<leader>ss', builtin.builtin, {}, '[S]earch [S]elect Builtin')
+	map('n', '<leader>sw', builtin.grep_string, {}, '[S]earch Current [W]ord')
+	map('n', '<leader>sg', builtin.live_grep, {}, '[S]earch [G]rep')
+	map('n', '<leader>sd', builtin.diagnostics, {}, '[S]earch [E]rrors')
+	map('n', '<leader>so', builtin.oldfiles, {}, '[S]earch [O]ld Files')
+	map('n', '<leader>sb', builtin.buffers, {}, '[S]earch [B]uffers')
 end
 
 local function current_buffer_fuzzy_find(builtin, get_dropdown)
-	map('n', '<leader>/', function()
+	map('n', '<leader>sc', function()
 		builtin.current_buffer_fuzzy_find(get_dropdown({
 			winblend = 10,
 			previewer = false,
 		}))
-	end, opts, '[/] Fuzzily search in current buffer')
+	end, {}, '[S]earch [C]urrent Buffer')
 end
 
 local function live_grep(builtin)
-	map('n', '<leader>s/', function()
+	map('n', '<leader>si', function()
 		builtin.live_grep({
 			grep_open_files = true,
 			prompt_title = 'Live grep in open files',
 		})
-	end, opts, '[S]earch [/] in open files')
+	end, {}, '[S]earch [I]n Open Files')
 end
 
 local function find_neovim_files(builtin)
 	map('n', '<leader>sn', function()
 		builtin.find_files({ cwd = vim.fn.stdpath('config') })
-	end, opts, '[S]earch [N]eovim files')
+	end, {}, '[S]earch [N]eovim Files')
 end
 
 local function indent_for_preview_files()
