@@ -10,6 +10,6 @@ return {
 			signs = false,
 		})
 
-		todo_keymaps(todo)
+		todo_keymaps()
 	end,
 }
