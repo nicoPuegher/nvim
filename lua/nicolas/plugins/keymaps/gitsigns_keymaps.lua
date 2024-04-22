@@ -1,47 +1,43 @@
 local map = require('nicolas.helper.map')
 
-local opts = {
-	identifier = 'Gitsigns: ',
-}
-
 local function gitsigns_keymaps(gitsigns)
-	map('n', ']h', function()
+	map('n', ']g', function()
 		if vim.wo.diff then
-			vim.cmd.normal({ ']h', bang = true })
+			vim.cmd.normal({ ']g', bang = true })
 		else
 			gitsigns.nav_hunk('next')
 		end
-	end, opts, '[H]unk next')
-	map('n', '[h', function()
+	end, {}, '[G]it Next Hunk')
+	map('n', '[g', function()
 		if vim.wo.diff then
-			vim.cmd.normal({ '[h', bang = true })
+			vim.cmd.normal({ '[g', bang = true })
 		else
 			gitsigns.nav_hunk('prev')
 		end
-	end, opts, '[H]unk prev')
+	end, {}, '[G]it Prev Hunk')
 
-	map('n', '<leader>hs', gitsigns.stage_hunk, opts, '[H]unk [S]tage')
-	map('n', '<leader>hu', gitsigns.undo_stage_hunk, opts, '[H]unk [U]ndo stage')
-	map('n', '<leader>hr', gitsigns.reset_hunk, opts, '[H]unk [R]estore')
-	map('n', '<leader>hS', gitsigns.stage_buffer, opts, '[H]unk [S]tage buffer')
-	map('n', '<leader>hR', gitsigns.reset_buffer, opts, '[H]unk [R]estore buffer')
-	map('n', '<leader>hsp', gitsigns.preview_hunk, opts, '[H]unk [S]how [P]review')
-	map('n', '<leader>hd', gitsigns.diffthis, opts, '[H]unk [D]iff')
-	map('n', '<leader>tb', gitsigns.toggle_current_line_blame, opts, '[T]oggle [B]lame')
-	map('n', '<leader>td', gitsigns.toggle_deleted, opts, '[T]oggle [D]eleted')
-	map('n', '<leader>hb', function()
+	map('n', '<leader>gs', gitsigns.stage_hunk, {}, '[G]it [S]tage Hunk')
+	map('n', '<leader>gu', gitsigns.undo_stage_hunk, {}, '[G]it [U]nstage Hunk')
+	map('n', '<leader>gr', gitsigns.reset_hunk, {}, '[G]it [R]estore Hunk')
+	map('n', '<leader>gS', gitsigns.stage_buffer, {}, '[G]it [S]tage Buffer')
+	map('n', '<leader>gR', gitsigns.reset_buffer, {}, '[G]it [R]estore Buffer')
+	map('n', '<leader>gp', gitsigns.preview_hunk, {}, '[G]it [P]review Hunk')
+	map('n', '<leader>gd', gitsigns.diffthis, {}, '[G]it [D]iff Hunk')
+	map('n', '<leader>tb', gitsigns.toggle_current_line_blame, {}, '[T]oggle Git [B]lame')
+	map('n', '<leader>td', gitsigns.toggle_deleted, {}, '[T]oggle Git [D]eleted')
+	map('n', '<leader>gb', function()
 		gitsigns.blame_line({ full = true })
-	end, opts, '[H]unk [B]lame')
-	map('n', '<leader>hD', function()
+	end, {}, '[G]it [B]lame')
+	map('n', '<leader>gD', function()
 		gitsigns.diffthis('~')
-	end, opts, '[H]unk [D]iff ~')
+	end, {}, '[G]it [D]iff Hunk ~')
 
-	map('v', '<leader>hs', function()
+	map('v', '<leader>gs', function()
 		gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-	end, opts, '(Vm) [H]unk [S]tage')
-	map('v', '<leader>hr', function()
+	end, {}, '[G]it [S]tage Hunk')
+	map('v', '<leader>gr', function()
 		gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-	end, opts, '(Vm) [H]unk [R]estore')
+	end, {}, '[G]it [R]estore Hunk')
 end
 
 return gitsigns_keymaps
