@@ -1,5 +1,5 @@
 local function map(mode, keys, func, opts, desc)
-	local options = { desc = opts.identifier .. desc }
+	local options = { desc = desc }
 	if opts.bufnr then
 		options.buffer = opts.bufnr
 	end
