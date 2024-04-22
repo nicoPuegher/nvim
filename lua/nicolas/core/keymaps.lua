@@ -27,3 +27,5 @@ vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>zz', { desc = 'Next Quickfix List It
 vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>zz', { desc = 'Prev Quickfix List Item' })
 vim.keymap.set('n', '<leader>qo', '<cmd>copen<CR>', { desc = '[Q]uickfix List [O]pen' })
 vim.keymap.set('n', '<leader>qc', '<cmd>cclose<CR>', { desc = '[Q]uickfix List [C]lose' })
+
+require('nicolas.helper.replace')
