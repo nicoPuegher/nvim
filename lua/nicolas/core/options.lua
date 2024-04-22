@@ -21,6 +21,8 @@ vim.opt.inccommand = 'split'
 
 -- Timer
 vim.opt.updatetime = 250
+vim.o.timeout = true
+vim.o.timeoutlen = 300
 
 -- Search
 vim.opt.ignorecase = true
