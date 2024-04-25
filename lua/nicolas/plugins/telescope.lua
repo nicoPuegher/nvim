@@ -25,6 +25,7 @@ return {
 
 		pcall(require('telescope').load_extension, 'fzf')
 		pcall(require('telescope').load_extension, 'ui-select')
+		pcall(require('telescope').load_extension, 'harpoon')
 
 		telescope_keymaps.builtin_keymaps(builtin)
 		telescope_keymaps.current_buffer_fuzzy_find(builtin, get_dropdown)
