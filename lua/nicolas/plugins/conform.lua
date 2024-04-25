@@ -3,26 +3,10 @@ return {
 	event = { 'BufReadPre', 'BufNewFile' },
 	config = function()
 		local conform = require('conform')
+		local conform_settings = require('nicolas.plugins.settings.conform_settings')
+		local conform_keymaps = require('nicolas.plugins.keymaps.conform_keymaps')
 
-		conform.setup({
-			formatters_by_ft = {
-				lua = { 'stylua' },
-				html = { 'prettier' },
-				css = { 'prettier' },
-				javascript = { 'prettier' },
-				json = { 'prettier' },
-			},
-			format_on_save = {
-				lsp_fallback = true,
-				timeout_ms = 500,
-			},
-		})
-
-		vim.keymap.set({ 'n', 'v' }, '<leader>cf', function()
-			conform.format({
-				lsp_fallback = true,
-				timeout_ms = 500,
-			})
-		end, { desc = '[C]ode [F]ormat' })
+		conform.setup(conform_settings())
+		conform_keymaps(conform)
 	end,
 }
