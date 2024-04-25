@@ -10,6 +10,7 @@ local function builtin_keymaps(builtin)
 	map('n', '<leader>sd', builtin.diagnostics, {}, '[S]earch [E]rrors')
 	map('n', '<leader>so', builtin.oldfiles, {}, '[S]earch [O]ld Files')
 	map('n', '<leader>sb', builtin.buffers, {}, '[S]earch [B]uffers')
+	map('n', '<leader>sm', '<cmd>Telescope harpoon marks<CR>', {}, '[S]earch Harpoon [M]arks')
 end
 
 local function current_buffer_fuzzy_find(builtin, get_dropdown)
