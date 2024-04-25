@@ -12,25 +12,12 @@ return {
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
 		local loaders = require('luasnip.loaders.from_vscode')
-		local keymaps = require('nicolas.plugins.keymaps.cmp_keymaps')
+		local cmp_settings = require('nicolas.plugins.settings.cmp_settings')
 
 		luasnip.config.setup({})
 
 		loaders.lazy_load()
 
-		---@diagnostic disable-next-line missing-fields
-		cmp.setup({
-			snippet = {
-				expand = function(args)
-					luasnip.lsp_expand(args.body)
-				end,
-			},
-			mapping = cmp.mapping.preset.insert(keymaps(cmp, luasnip)),
-			sources = {
-				{ name = 'nvim_lsp' },
-				{ name = 'luasnip' },
-				{ name = 'path' },
-			},
-		})
+		cmp.setup(cmp_settings(luasnip, cmp))
 	end,
 }
