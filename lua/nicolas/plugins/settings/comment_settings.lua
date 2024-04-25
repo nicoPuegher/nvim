@@ -1,8 +1,5 @@
 local function comment_settings()
 	return {
-		padding = true,
-		sticky = true,
-		ignore = nil,
 		toggler = {
 			line = 'gcc', -- line-comment toggle
 			block = 'gbc', -- block-comment toggle
@@ -21,8 +18,6 @@ local function comment_settings()
 			basic = true, -- operator-pending mapping: `gcc` `gbc` `gc[count]{motion}` `gc[count]{motion}`
 			extra = true, -- extra mappings: `gco` `gc0` `gcA`
 		},
-		pre_hook = nil,
-		post_hook = nil,
 	}
 end
 
