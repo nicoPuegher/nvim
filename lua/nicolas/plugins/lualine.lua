@@ -4,7 +4,8 @@ return {
 	event = 'VeryLazy',
 	config = function()
 		local lualine = require('lualine')
+		local lualine_settings = require('nicolas.plugins.settings.lualine_settings')
 
-		lualine.setup({})
+		lualine.setup(lualine_settings())
 	end,
 }
