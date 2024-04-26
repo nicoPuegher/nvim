@@ -7,7 +7,6 @@ return {
 		local colorscheme_settings = require('nicolas.plugins.settings.colorscheme_settings')
 
 		colorscheme.setup(colorscheme_settings())
-
 		vim.cmd('colorscheme rose-pine')
 	end,
 }
