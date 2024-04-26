@@ -15,9 +15,7 @@ return {
 		local cmp_settings = require('nicolas.plugins.settings.cmp_settings')
 
 		luasnip.config.setup({})
-
 		loaders.lazy_load()
-
 		cmp.setup(cmp_settings(luasnip, cmp))
 	end,
 }
