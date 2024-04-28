@@ -1,22 +1,22 @@
 local function comment_settings()
 	return {
 		toggler = {
-			line = 'gcc', -- line-comment toggle
-			block = 'gbc', -- block-comment toggle
+			line = 'tc', -- line-comment toggle
+			block = 'tb', -- block-comment toggle
 		},
 		opleader = {
-			line = 'gct', -- line-comment keymap
-			block = 'gbt', -- block-comment keymap
+			line = 'mc', -- line-comment keymap
+			block = 'mb', -- block-comment keymap
 		},
 		extra = {
-			above = 'gcO', -- add comment on line above
-			below = 'gco', -- add comment on line below
-			eol = 'gcA', -- add comment at end of line
+			above = 'mcO', -- add comment on line above
+			below = 'mco', -- add comment on line below
+			eol = 'mcA', -- add comment at end of line
 		},
 		-- if mappings = false, then no mappings will be created
 		mappings = {
-			basic = true, -- operator-pending mapping: `gcc` `gbc` `gc[count]{motion}` `gc[count]{motion}`
-			extra = true, -- extra mappings: `gco` `gc0` `gcA`
+			basic = true, -- operator-pending mapping: `tc` `tb` `mc[count]{motion}` `mb[count]{motion}`
+			extra = true, -- extra mappings: `mco` `mc0` `mcA`
 		},
 	}
 end
