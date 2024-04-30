@@ -13,6 +13,17 @@ local function harpoon_keymaps(harpoon)
 	map('n', '<leader>hn', function()
 		harpoon:list():next()
 	end, {}, '[H]arpoon [N]ext')
+
+	harpoon:extend({
+		UI_CREATE = function(cx)
+			map('n', '<C-v>', function()
+				harpoon.ui:select_menu_item({ vsplit = true })
+			end, { cx.bufnr }, 'Open Harpoon Mark In Vsplit')
+			map('n', '<C-x>', function()
+				harpoon.ui:select_menu_item({ split = true })
+			end, { cx.bufnr }, 'Open Harpoon Mark In Xsplit')
+		end,
+	})
 end
 
 return harpoon_keymaps

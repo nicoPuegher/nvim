@@ -1,4 +1,4 @@
-function Replace()
+local function Replace()
 	local old_text = vim.fn.input('Enter text to replace: ')
 	if old_text == '' then
 		return
@@ -16,7 +16,7 @@ end
 vim.api.nvim_set_keymap(
 	'n',
 	'<leader>r',
-	'<cmd>lua Replace()<CR>',
+	'<cmd>lua require("nicolas.helper.replace")()<CR>',
 	{ noremap = true, silent = true, desc = '[R]ename' }
 )
 

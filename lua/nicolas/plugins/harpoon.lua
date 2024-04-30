@@ -7,7 +7,6 @@ return {
 		local harpoon_keymaps = require('nicolas.plugins.keymaps.harpoon_keymaps')
 
 		harpoon:setup()
-
 		harpoon_keymaps(harpoon)
 	end,
 }
