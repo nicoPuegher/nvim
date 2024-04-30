@@ -4,5 +4,5 @@ return {
 		'numToStr/Comment.nvim',
 		opts = require('nicolas.plugins.settings.comment_settings'),
 		lazy = false,
-	},
+	}, -- Add and toggle comments quickly
 }
