@@ -5,7 +5,6 @@ local function key_settings()
 			registers = false,
 			spelling = {
 				enabled = false,
-				suggestions = 20,
 			},
 			presets = {
 				operators = false,
@@ -18,56 +17,29 @@ local function key_settings()
 			},
 		},
 		operators = {},
-		key_labels = {},
 		motions = {
 			count = false,
-		},
-		icons = {
-			breadcrumb = '»',
-			separator = '➜',
-			group = '+',
-		},
-		popup_mappings = {
-			scroll_down = '<down>',
-			scroll_up = '<up>',
-		},
-		window = {
-			border = 'none',
-			position = 'bottom',
-			margin = { 1, 0, 1, 0 },
-			padding = { 1, 2, 1, 2 },
-			winblend = 0,
-			zindex = 1000,
-		},
-		layout = {
-			height = { min = 4, max = 25 },
-			width = { min = 20, max = 50 },
-			spacing = 3,
-			align = 'left',
-		},
-		ignore_missing = false,
-		hidden = { '<silent>', '<cmd>', '<Cmd>', '<CR>', '^:', '^ ', '^call ', '^lua ' },
-		show_help = true,
-		show_keys = true,
-		triggers = 'auto',
-		triggers_nowait = {
-			'`',
-			"'",
-			'g`',
-			"g'",
-			'"',
-			'<c-r>',
-			'z=',
-		},
-		triggers_blacklist = {
-			i = { 'j', 'k' },
-			v = { 'j', 'k' },
-		},
-		disable = {
-			buftypes = {},
-			filetypes = {},
 		},
 	}
 end
 
-return key_settings
+local function key_register()
+	return {
+		['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
+		['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+		['<leader>d'] = { name = '[D]iagnostics', _ = 'which_key_ignore' },
+		['<leader>l'] = { name = '[L]SP', _ = 'which_key_ignore' },
+		['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
+		['<leader>n'] = { name = '[N]otes', _ = 'which_key_ignore' },
+		['<leader>q'] = { name = '[Q]uickfix', _ = 'which_key_ignore' },
+		['<leader>f'] = { name = '[F]ile', _ = 'which_key_ignore' },
+		['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
+		['<leader>h'] = { name = '[H]arpoon', _ = 'which_key_ignore' },
+		['<leader>sg'] = { name = '[G]it', _ = 'which_key_ignore' },
+	}
+end
+
+return {
+	key_settings = key_settings,
+	key_register = key_register,
+}
