@@ -10,7 +10,7 @@ local function treesitter_settings(treesitter)
 				'indent',
 				'incremental_selection',
 			},
-			ensure_installed = { 'lua', 'vimdoc', 'html', 'css', 'javascript' },
+			ensure_installed = { 'lua', 'vimdoc', 'html', 'css', 'javascript', 'markdown_inline' },
 			auto_install = false,
 			sync_install = false,
 			ignore_install = {},
