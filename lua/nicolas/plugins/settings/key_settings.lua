@@ -33,7 +33,7 @@ local function key_register()
 		['<leader>n'] = { name = '[N]otes', _ = 'which_key_ignore' },
 		['<leader>q'] = { name = '[Q]uickfix', _ = 'which_key_ignore' },
 		['<leader>f'] = { name = '[F]ile', _ = 'which_key_ignore' },
-		['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
+		['<leader>t'] = { name = '[T]rouble', _ = 'which_key_ignore' },
 		['<leader>h'] = { name = '[H]arpoon', _ = 'which_key_ignore' },
 		['<leader>sg'] = { name = '[G]it', _ = 'which_key_ignore' },
 		['<leader>gt'] = { name = '[T]oggle', _ = 'which_key_ignore' },
