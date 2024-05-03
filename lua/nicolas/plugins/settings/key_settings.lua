@@ -27,7 +27,7 @@ local function key_register()
 	return {
 		['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
 		['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-		['<leader>d'] = { name = '[D]iagnostics', _ = 'which_key_ignore' },
+		['<leader>e'] = { name = '[E]rror', _ = 'which_key_ignore' },
 		['<leader>l'] = { name = '[L]SP', _ = 'which_key_ignore' },
 		['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
 		['<leader>n'] = { name = '[N]otes', _ = 'which_key_ignore' },
