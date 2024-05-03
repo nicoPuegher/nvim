@@ -7,6 +7,8 @@ vim.keymap.set('n', '<leader>fe', vim.cmd.Ex, { desc = '[F]ile [E]xplorer' })
 -- Text manipulation
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move Selection Downwards' })
 vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { desc = 'Move Selection Upwards' })
+vim.keymap.set('x', '<leader>p', '"_dP', { desc = '[P]aste Replace Void' })
+vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]eplace' })
 
 -- Cursor movement
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Half Page Jump [D]ownwards' })
