@@ -1,6 +1,6 @@
 return {
 	'folke/todo-comments.nvim',
-	event = 'VimEnter',
+	event = 'VeryLazy',
 	dependencies = { 'nvim-lua/plenary.nvim' },
 	config = function()
 		local todo = require('todo-comments')
