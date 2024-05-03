@@ -21,8 +21,8 @@ vim.keymap.set('v', '<leader>y', '"+y', { desc = '[Y]ank Selection To Clipboard'
 -- Diagnostic keyvim.keymap.sets
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next [D]iagnostic Message' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Prev [D]iagnostic Message' })
-vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = '[D]iagnostic [M]essages' })
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setqflist, { desc = '[D]iagnostic [Q]uickfix' })
+vim.keymap.set('n', '<leader>em', vim.diagnostic.open_float, { desc = '[E]rror [M]essages' })
+vim.keymap.set('n', '<leader>eq', vim.diagnostic.setqflist, { desc = '[E]rror [Q]uickfix' })
 vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>zz', { desc = 'Next Quickfix List Item' })
 vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>zz', { desc = 'Prev Quickfix List Item' })
 vim.keymap.set('n', '<leader>qo', '<cmd>copen<CR>', { desc = '[Q]uickfix List [O]pen' })
