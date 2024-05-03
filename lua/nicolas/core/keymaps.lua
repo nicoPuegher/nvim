@@ -17,6 +17,8 @@ vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Center Search Highlight' })
 -- Clipboard
 vim.keymap.set('n', '<leader>y', '"+Y', { desc = '[Y]ank Line To Clipboard' })
 vim.keymap.set('v', '<leader>y', '"+y', { desc = '[Y]ank Selection To Clipboard' })
+vim.keymap.set('n', '<leader>d', '"_d', { desc = '[D]elete To Void Register' })
+vim.keymap.set('v', '<leader>d', '"_d', { desc = '[D]elete To Void Register' })
 
 -- Diagnostic keyvim.keymap.sets
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next [D]iagnostic Message' })
