@@ -29,7 +29,4 @@ vim.keymap.set('n', '<leader>qo', '<cmd>copen<CR>', { desc = '[Q]uickfix List [O
 vim.keymap.set('n', '<leader>qc', '<cmd>cclose<CR>', { desc = '[Q]uickfix List [C]lose' })
 
 -- Command line
-vim.api.nvim_set_keymap('c', '<C-R>', '<C-F><Up>', { noremap = true, desc = 'Search Command History' })
-
--- Helper
-require('nicolas.helper.replace')
+vim.api.nvim_set_keymap('c', '<C-r>', '<C-f><Up>', { noremap = true, desc = 'Search Command History' })
