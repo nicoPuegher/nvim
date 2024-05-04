@@ -7,9 +7,6 @@ return {
 				} },
 				telemetry = { enable = false },
 				hint = { enable = true },
-				library = {
-					'${3rd}/love2d/library',
-				},
 			},
 		},
 		html = {},
