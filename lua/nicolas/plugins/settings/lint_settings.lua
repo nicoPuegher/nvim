@@ -3,7 +3,8 @@ local function lint_settings(lint)
 		lua = { 'selene' },
 		html = { 'htmlhint' },
 		css = { 'stylelint' },
-		javascript = { 'eslint_d' },
+		javascript = { 'eslint' },
+		javascriptreact = { 'eslint' },
 	}
 end
 
