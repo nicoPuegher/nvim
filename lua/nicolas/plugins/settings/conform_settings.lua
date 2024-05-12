@@ -5,6 +5,7 @@ local function conform_settings()
 			html = { 'prettier' },
 			css = { 'prettier' },
 			javascript = { 'prettier' },
+			javascriptreact = { 'prettier' },
 			json = { 'prettier' },
 		},
 		format_on_save = {

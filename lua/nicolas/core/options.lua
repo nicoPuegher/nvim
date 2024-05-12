@@ -7,6 +7,7 @@ vim.opt.wrap = false
 vim.opt.guicursor = { 'a:block' }
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
+vim.opt.showmode = false
 
 -- Indentation
 vim.opt.smartindent = true
