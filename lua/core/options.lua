@@ -11,3 +11,8 @@ vim.opt.scrolloff = 10
 -- Window management
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Command line
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.inccommand = 'split'
