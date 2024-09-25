@@ -8,6 +8,16 @@ vim.opt.showmode = false
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
+-- Buffer
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.list = true
+vim.opt.undofile = true
+vim.opt.backup = true
+vim.opt.backupdir = vim.fn.stdpath('state') .. '/backup'
+
 -- Window management
 vim.opt.splitright = true
 vim.opt.splitbelow = true
