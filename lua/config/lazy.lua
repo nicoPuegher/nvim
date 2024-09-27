@@ -21,4 +21,8 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     spec = {},
     checker = { enabled = true },
+    rocks = {
+        hererocks = false,
+        enabled = false,
+    },
 })
