@@ -11,5 +11,8 @@ return {
     config = function()
         local luasnip = require('luasnip')
         luasnip.config.setup({})
+
+        local cmp = require('cmp')
+        cmp.setup({})
     end,
 }
