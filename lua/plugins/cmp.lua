@@ -13,6 +13,12 @@ return {
         luasnip.config.setup({})
 
         local cmp = require('cmp')
-        cmp.setup({})
+        cmp.setup({
+            snippet = {
+                expand = function(args)
+                    luasnip.lsp_expand(args.body)
+                end,
+            },
+        })
     end,
 }
