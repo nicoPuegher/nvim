@@ -25,6 +25,10 @@ return {
                 { name = 'buffer' },
                 { name = 'path' },
             }),
+            mapping = {
+                ['<C-n>'] = cmp.mapping.select_next_item(),
+                ['<C-p>'] = cmp.mapping.select_prev_item(),
+            },
         })
     end,
 }
