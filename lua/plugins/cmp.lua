@@ -1,6 +1,6 @@
 return {
     'hrsh7th/nvim-cmp',
-        dependencies = {
+    dependencies = {
         { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
         'saadparwaiz1/cmp_luasnip',
         'hrsh7th/cmp-nvim-lsp',
@@ -8,11 +8,11 @@ return {
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
     },
-    config = function()
+    opts = function()
         local luasnip = require('luasnip')
-        luasnip.config.setup({})
-
         local cmp = require('cmp')
+
+        luasnip.config.setup({})
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -23,8 +23,9 @@ return {
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
-                { name = 'buffer' },
                 { name = 'path' },
+            }, {
+                { name = 'buffer' },
             }),
             mapping = {
                 ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -33,6 +34,7 @@ return {
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),
                 ['<C-e>'] = cmp.mapping.abort(),
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                ['<C-Space>'] = cmp.mapping.complete({}),
                 ['<C-l>'] = cmp.mapping(function()
                     if luasnip.expand_or_locally_jumpable() then
                         luasnip.expand_or_jump()
