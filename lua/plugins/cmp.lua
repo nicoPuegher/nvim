@@ -8,7 +8,7 @@ return {
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
     },
-    config = function()
+    opts = function()
         local luasnip = require('luasnip')
         luasnip.config.setup({})
 
