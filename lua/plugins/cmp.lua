@@ -23,8 +23,9 @@ return {
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
-                { name = 'buffer' },
                 { name = 'path' },
+            }, {
+                { name = 'buffer' },
             }),
             mapping = {
                 ['<C-n>'] = cmp.mapping.select_next_item(),
