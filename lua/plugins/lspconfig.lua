@@ -4,6 +4,10 @@ return {
         { 'williamboman/mason-lspconfig.nvim', opts = {} },
     },
     config = function()
+        local cmp_nvim_lsp = require('cmp_nvim_lsp')
+        local mason_lspconfig = require('mason-lspconfig')
+        local lspconfig = require('lspconfig')
+
         local servers = {
             lua_ls = {
                 settings = {
@@ -17,14 +21,14 @@ return {
         }
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+        capabilities = vim.tbl_deep_extend('force', capabilities, cmp_nvim_lsp.default_capabilities())
 
-        require('mason-lspconfig').setup {
+        mason_lspconfig.setup {
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}
                     server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-                    require('lspconfig')[server_name].setup(server)
+                    lspconfig[server_name].setup(server)
                 end,
             }
         }
