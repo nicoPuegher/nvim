@@ -1,5 +1,15 @@
 return {
     'stevearc/conform.nvim',
+    keys = {
+        {
+            '<leader>cf',
+            function()
+                require('conform').format({ async = true, lsp_format = 'fallback' })
+            end,
+            mode = '',
+            desc = '[C]ode [F]ormat',
+        },
+    },
     opts = {
         format_on_save = function(bufnr)
             local disable_filetypes = {}
