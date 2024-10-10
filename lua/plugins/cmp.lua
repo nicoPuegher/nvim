@@ -1,5 +1,6 @@
 return {
     'hrsh7th/nvim-cmp',
+    event = { 'CmdlineEnter', 'InsertEnter' },
     dependencies = {
         { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
         'saadparwaiz1/cmp_luasnip',
@@ -51,16 +52,16 @@ return {
         cmp.setup.cmdline({ '/', '?' }, {
             mapping = cmp.mapping.preset.cmdline(),
             sources = {
-                { name = 'buffer' }
+                { name = 'buffer' },
             },
         })
 
         cmp.setup.cmdline(':', {
             mapping = cmp.mapping.preset.cmdline(),
             sources = cmp.config.sources({
-                { name = 'path' }
+                { name = 'path' },
             }, {
-                { name = 'cmdline' }
+                { name = 'cmdline' },
             }),
         })
     end,

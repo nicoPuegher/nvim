@@ -22,7 +22,6 @@ require('lazy').setup({
     spec = {
         { import = 'plugins' },
     },
-    checker = { enabled = true },
     rocks = {
         hererocks = false,
         enabled = false,
