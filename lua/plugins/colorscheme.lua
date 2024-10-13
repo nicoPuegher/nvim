@@ -7,6 +7,7 @@ return {
         variant = 'main',
         styles = {
             bold = false,
+            italic = false,
         },
     },
 }
