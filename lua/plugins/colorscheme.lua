@@ -10,5 +10,7 @@ return {
             italic = false,
         },
     },
-    init = function() end,
+    init = function()
+        vim.cmd.colorscheme('rose-pine')
+    end,
 }
