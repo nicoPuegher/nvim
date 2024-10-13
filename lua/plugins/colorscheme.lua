@@ -3,5 +3,7 @@ return {
     name = "rose-pine",
     lazy = false,
     priority = 1000,
-    opts = {},
+    opts = {
+        variant = 'main',
+    },
 }
