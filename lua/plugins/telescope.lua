@@ -13,5 +13,6 @@ return {
         },
         { 'nvim-tree/nvim-web-devicons', enabled = true },
         'nvim-telescope/telescope-ui-select.nvim',
+        'sharkdp/fd',
     },
 }
