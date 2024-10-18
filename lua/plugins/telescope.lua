@@ -15,4 +15,5 @@ return {
         'nvim-telescope/telescope-ui-select.nvim',
         'sharkdp/fd',
     },
+    opts = function() end,
 }
