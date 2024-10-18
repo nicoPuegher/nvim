@@ -19,5 +19,7 @@ return {
         local telescope = require('telescope')
         local themes = require('telescope.themes')
         local builtin = require('telescope.builtin')
+
+        telescope.setup({})
     end,
 }
