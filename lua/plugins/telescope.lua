@@ -26,6 +26,11 @@ return {
                     themes.get_dropdown(),
                 },
             },
+            defaults = {
+                layout_config = {
+                    horizontal = { preview_width = 0.5 },
+                },
+            },
         })
     end,
 }
