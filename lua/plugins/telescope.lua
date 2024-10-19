@@ -33,5 +33,7 @@ return {
                 border = false,
             },
         })
+
+        pcall(telescope.load_extension, 'fzf')
     end,
 }
