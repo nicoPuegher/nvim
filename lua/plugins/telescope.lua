@@ -36,5 +36,7 @@ return {
 
         pcall(telescope.load_extension, 'fzf')
         pcall(telescope.load_extension, 'ui-select')
+
+        vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
     end,
 }
