@@ -35,5 +35,6 @@ return {
         })
 
         pcall(telescope.load_extension, 'fzf')
+        pcall(telescope.load_extension, 'ui-select')
     end,
 }
