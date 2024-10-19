@@ -30,6 +30,7 @@ return {
                 layout_config = {
                     horizontal = { preview_width = 0.5 },
                 },
+                border = false,
             },
         })
     end,
