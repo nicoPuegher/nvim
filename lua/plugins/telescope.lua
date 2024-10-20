@@ -44,5 +44,6 @@ return {
         vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
         vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect builtin' })
         vim.keymap.set('n', '<leader>sl', builtin.live_grep, { desc = '[S]earch [L]ive grep' })
+        vim.keymap.set('n', '<leader>sgf', builtin.git_files, { desc = '[S]earch [G]it [F]iles' })
     end,
 }
