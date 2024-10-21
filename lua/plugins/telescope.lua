@@ -47,5 +47,12 @@ return {
         vim.keymap.set('n', '<leader>sgf', builtin.git_files, { desc = '[S]earch [G]it [F]iles' })
         vim.keymap.set('n', '<leader>sgs', builtin.git_status, { desc = '[S]earch [G]it [S]tatus' })
         vim.keymap.set('n', '<leader>sgc', builtin.git_commits, { desc = '[S]earch [G]it [C]ommits' })
+        vim.keymap.set('n', '<leader>sc', function()
+            builtin.current_buffer_fuzzy_find(themes.get_dropdown({
+                winblend = 10,
+                previewer = false,
+                border = false,
+            }))
+        end, { desc = '[S]earch [C]urrent buffer' })
     end,
 }
