@@ -54,5 +54,8 @@ return {
                 border = false,
             }))
         end, { desc = '[S]earch [C]urrent buffer' })
+        vim.keymap.set('n', '<leader>si', function()
+            builtin.live_grep({ grep_open_files = true })
+        end, { desc = '[S]earch [I]n open files' })
     end,
 }
