@@ -1,4 +1,2 @@
+indent_type = 'Spaces'
 quote_style = 'AutoPreferSingle'
-
-[sort_requires]
-enabled = true
