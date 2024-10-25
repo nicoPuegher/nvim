@@ -26,4 +26,9 @@ require('lazy').setup({
         hererocks = false,
         enabled = false,
     },
+    install = {
+        colorscheme = {
+            'rose-pine',
+        },
+    },
 })
