@@ -27,6 +27,7 @@ return {
                 gitsigns.undo_stage_hunk,
                 { desc = '[G]it [U]nstage hunk', buffer = bufnr }
             )
+            vim.keymap.set('n', '<leader>gr', gitsigns.reset_hunk, { desc = '[G]it [R]estore hunk', buffer = bufnr })
         end,
     },
 }
