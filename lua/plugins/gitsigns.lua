@@ -3,6 +3,8 @@ return {
     event = { 'BufReadPre' },
     opts = {
         numhl = true,
-        on_attach = function(bufnr) end,
+        on_attach = function(bufnr)
+            local gitsigns = require('gitsigns')
+        end,
     },
 }
