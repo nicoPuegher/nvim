@@ -20,6 +20,7 @@ return {
                     gitsigns.nav_hunk('next')
                 end
             end, { desc = 'Jump to the next [G]it change', buffer = bufnr })
+            vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, { desc = '[G]it [S]tage hunk', buffer = bufnr })
         end,
     },
 }
