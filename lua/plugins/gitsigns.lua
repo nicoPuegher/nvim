@@ -3,5 +3,6 @@ return {
     event = { 'BufReadPre' },
     opts = {
         numhl = true,
+        on_attach = function(bufnr) end,
     },
 }
