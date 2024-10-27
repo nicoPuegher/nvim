@@ -35,6 +35,7 @@ return {
                 gitsigns.reset_buffer,
                 { desc = '[G]it [R]estore buffer', buffer = bufnr }
             )
+            vim.keymap.set('n', '<leader>gp', gitsigns.preview_hunk, { desc = '[G]it [P]review hunk', buffer = bufnr })
         end,
     },
 }
