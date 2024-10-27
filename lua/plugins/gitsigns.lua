@@ -21,6 +21,12 @@ return {
                 end
             end, { desc = 'Jump to the next [G]it change', buffer = bufnr })
             vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, { desc = '[G]it [S]tage hunk', buffer = bufnr })
+            vim.keymap.set(
+                'n',
+                '<leader>gu',
+                gitsigns.undo_stage_hunk,
+                { desc = '[G]it [U]nstage hunk', buffer = bufnr }
+            )
         end,
     },
 }
