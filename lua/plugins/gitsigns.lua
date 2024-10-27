@@ -36,6 +36,7 @@ return {
                 { desc = '[G]it [R]estore buffer', buffer = bufnr }
             )
             vim.keymap.set('n', '<leader>gp', gitsigns.preview_hunk, { desc = '[G]it [P]review hunk', buffer = bufnr })
+            vim.keymap.set('n', '<leader>gd', gitsigns.diffthis, { desc = '[G]it [D]iff hunk', buffer = bufnr })
         end,
     },
 }
