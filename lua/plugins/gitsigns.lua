@@ -29,6 +29,12 @@ return {
             )
             vim.keymap.set('n', '<leader>gr', gitsigns.reset_hunk, { desc = '[G]it [R]estore hunk', buffer = bufnr })
             vim.keymap.set('n', '<leader>gS', gitsigns.stage_buffer, { desc = '[G]it [S]tage buffer', buffer = bufnr })
+            vim.keymap.set(
+                'n',
+                '<leader>gR',
+                gitsigns.reset_buffer,
+                { desc = '[G]it [R]estore buffer', buffer = bufnr }
+            )
         end,
     },
 }
