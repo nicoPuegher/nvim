@@ -43,6 +43,12 @@ return {
                 gitsigns.toggle_current_line_blame,
                 { desc = '[G]it [T]oggle [B]lame', buffer = bufnr }
             )
+            vim.keymap.set(
+                'n',
+                '<leader>gtd',
+                gitsigns.toggle_deleted,
+                { desc = '[G]it [T]oggle [D]eleted', buffer = bufnr }
+            )
         end,
     },
 }
