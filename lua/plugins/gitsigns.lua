@@ -52,6 +52,9 @@ return {
             vim.keymap.set('n', '<leader>gb', function()
                 gitsigns.blame_line({ full = true })
             end, { desc = '[G]it [B]lame', buffer = bufnr })
+            vim.keymap.set('v', '<leader>gs', function()
+                gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+            end, { desc = '[G]it [S]tage hunk', buffer = bufnr })
         end,
     },
 }
