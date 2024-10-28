@@ -6,13 +6,13 @@ return {
         on_attach = function(bufnr)
             local gitsigns = require('gitsigns')
 
-            vim.keymap.set('n', '[g', function()
+            vim.keymap.set('n', '[c', function()
                 if vim.wo.diff then
-                    vim.cmd.normal({ '[g', bang = true })
+                    vim.cmd.normal({ '[c', bang = true })
                 else
                     gitsigns.nav_hunk('prev')
                 end
-            end, { desc = 'Jump to the previous [G]it change', buffer = bufnr })
+            end, { desc = 'Jump to the previous git [C]hange', buffer = bufnr })
             vim.keymap.set('n', ']g', function()
                 if vim.wo.diff then
                     vim.cmd.normal({ ']g', bang = true })
