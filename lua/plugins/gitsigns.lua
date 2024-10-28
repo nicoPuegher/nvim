@@ -49,6 +49,9 @@ return {
                 gitsigns.toggle_deleted,
                 { desc = '[G]it [T]oggle [D]eleted', buffer = bufnr }
             )
+            vim.keymap.set('n', '<leader>gb', function()
+                gitsigns.blame_line({ full = true })
+            end, { desc = '[G]it [B]lame', buffer = bufnr })
         end,
     },
 }
