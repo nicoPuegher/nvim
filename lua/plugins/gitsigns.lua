@@ -37,6 +37,12 @@ return {
             )
             vim.keymap.set('n', '<leader>gp', gitsigns.preview_hunk, { desc = '[G]it [P]review hunk', buffer = bufnr })
             vim.keymap.set('n', '<leader>gd', gitsigns.diffthis, { desc = '[G]it [D]iff hunk', buffer = bufnr })
+            vim.keymap.set(
+                'n',
+                '<leader>gtb',
+                gitsigns.toggle_current_line_blame,
+                { desc = '[G]it [T]oggle [B]lame', buffer = bufnr }
+            )
         end,
     },
 }
