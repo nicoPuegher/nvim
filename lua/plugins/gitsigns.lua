@@ -55,6 +55,9 @@ return {
             vim.keymap.set('v', '<leader>gs', function()
                 gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
             end, { desc = '[G]it [S]tage hunk', buffer = bufnr })
+            vim.keymap.set('v', '<leader>gr', function()
+                gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+            end, { desc = '[G]it [R]estore hunk', buffer = bufnr })
         end,
     },
 }
