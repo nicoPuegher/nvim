@@ -13,13 +13,13 @@ return {
                     gitsigns.nav_hunk('prev')
                 end
             end, { desc = 'Jump to the previous git [C]hange', buffer = bufnr })
-            vim.keymap.set('n', ']g', function()
+            vim.keymap.set('n', ']c', function()
                 if vim.wo.diff then
-                    vim.cmd.normal({ ']g', bang = true })
+                    vim.cmd.normal({ ']c', bang = true })
                 else
                     gitsigns.nav_hunk('next')
                 end
-            end, { desc = 'Jump to the next [G]it change', buffer = bufnr })
+            end, { desc = 'Jump to the next git [C]hange', buffer = bufnr })
             vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, { desc = '[G]it [S]tage hunk', buffer = bufnr })
             vim.keymap.set(
                 'n',
