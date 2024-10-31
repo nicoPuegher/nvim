@@ -17,5 +17,9 @@ return {
                 end
             end,
         })
+
+        vim.keymap.set('n', '<leader>cl', function()
+            lint.try_lint()
+        end, { desc = '[C]ode [L]int' })
     end,
 }
