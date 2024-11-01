@@ -40,6 +40,7 @@ return {
                                     return string.format('%s (%s)', diagnostic.message, diagnostic.source)
                                 end,
                             },
+                            severity_sort = true,
                         })
                     end
                     lspconfig[server_name].setup(server)
