@@ -32,6 +32,9 @@ return {
                 function(server_name)
                     local server = servers[server_name] or {}
                     server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+                    server.on_attach = function()
+                        vim.diagnostic.config({})
+                    end
                     lspconfig[server_name].setup(server)
                 end,
             },
