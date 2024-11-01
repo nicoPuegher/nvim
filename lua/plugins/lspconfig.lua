@@ -35,6 +35,11 @@ return {
                     server.on_attach = function()
                         vim.diagnostic.config({
                             virtual_text = { severity_sort = true },
+                            float = {
+                                format = function(diagnostic)
+                                    return string.format('%s (%s)', diagnostic.message, diagnostic.source)
+                                end,
+                            },
                         })
                     end
                     lspconfig[server_name].setup(server)
