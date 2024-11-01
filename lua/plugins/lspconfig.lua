@@ -32,6 +32,17 @@ return {
                 function(server_name)
                     local server = servers[server_name] or {}
                     server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+                    server.on_attach = function()
+                        vim.diagnostic.config({
+                            virtual_text = { severity_sort = true },
+                            float = {
+                                format = function(diagnostic)
+                                    return string.format('%s (%s)', diagnostic.message, diagnostic.source)
+                                end,
+                            },
+                            severity_sort = true,
+                        })
+                    end
                     lspconfig[server_name].setup(server)
                 end,
             },
