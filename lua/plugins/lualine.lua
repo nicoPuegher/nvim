@@ -13,6 +13,10 @@ return {
             local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
             local buf_ft = vim.bo.filetype
             local components = {}
+
+            for _, client in pairs(buf_clients) do
+                table.insert(components, client.name)
+            end
         end
     end,
 }
