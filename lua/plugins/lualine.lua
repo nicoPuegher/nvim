@@ -17,6 +17,13 @@ return {
             for _, client in pairs(buf_clients) do
                 table.insert(components, client.name)
             end
+
+            local conform_success, conform = pcall(require, 'conform')
+            if conform_success then
+                for _, formatter in pairs(conform.list_formatters_for_buffer(0)) do
+                    table.insert(components, formatter)
+                end
+            end
         end
     end,
 }
