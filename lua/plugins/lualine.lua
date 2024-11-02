@@ -6,4 +6,5 @@ return {
         'mfussenegger/nvim-lint',
         'stevearc/conform.nvim',
     },
+    opts = function() end,
 }
