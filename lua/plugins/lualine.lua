@@ -8,5 +8,7 @@ return {
     },
     opts = function()
         local lualine = require('lualine')
+
+        local function get_attached_clients() end
     end,
 }
