@@ -4,6 +4,7 @@ return {
     opts = {
         plugins = {
             marks = false,
+            registers = false,
         },
     },
 }
