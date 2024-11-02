@@ -6,5 +6,8 @@ return {
             marks = false,
             registers = false,
         },
+        icons = {
+            mappings = false,
+        },
     },
 }
