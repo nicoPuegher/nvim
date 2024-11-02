@@ -34,6 +34,10 @@ return {
                     end
                 end
             end
+
+            if #components == 0 then
+                return 'No client active'
+            end
         end
     end,
 }
