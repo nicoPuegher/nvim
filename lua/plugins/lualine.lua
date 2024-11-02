@@ -24,6 +24,16 @@ return {
                     table.insert(components, formatter)
                 end
             end
+
+            local lint_success, lint = pcall(require, 'lint')
+            if lint_success then
+                local linters = lint.linters_by_ft[buf_ft]
+                if linters then
+                    for _, linter in pairs(linters) do
+                        table.insert(components, linter)
+                    end
+                end
+            end
         end
     end,
 }
