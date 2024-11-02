@@ -1,5 +1,9 @@
 return {
     'folke/which-key.nvim',
     event = 'VimEnter',
-    opts = {},
+    opts = {
+        plugins = {
+            marks = false,
+        },
+    },
 }
