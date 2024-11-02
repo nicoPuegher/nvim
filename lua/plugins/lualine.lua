@@ -38,6 +38,8 @@ return {
             if #components == 0 then
                 return 'No client active'
             end
+
+            return table.concat(components, ' | ')
         end
     end,
 }
