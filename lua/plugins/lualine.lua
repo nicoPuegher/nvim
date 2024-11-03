@@ -42,6 +42,10 @@ return {
             return table.concat(components, ' | ')
         end
 
-        lualine.setup({})
+        lualine.setup({
+            sections = {
+                lualine_a = { 'mode' },
+            },
+        })
     end,
 }
