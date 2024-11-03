@@ -41,5 +41,7 @@ return {
 
             return table.concat(components, ' | ')
         end
+
+        lualine.setup({})
     end,
 }
