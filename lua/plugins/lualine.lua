@@ -47,6 +47,10 @@ return {
                 lualine_a = { 'mode' },
                 lualine_b = { 'branch', 'diagnostics' },
                 lualine_c = { 'filetype', 'filename', 'filesize' },
+                lualine_x = {
+                    'encoding',
+                    { 'fileformat', symbols = { unix = 'unix' } },
+                },
             },
         })
     end,
