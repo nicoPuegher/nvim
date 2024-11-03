@@ -46,6 +46,7 @@ return {
             sections = {
                 lualine_a = { 'mode' },
                 lualine_b = { 'branch', 'diagnostics' },
+                lualine_c = { 'filetype', 'filename', 'filesize' },
             },
         })
     end,
