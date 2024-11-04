@@ -52,6 +52,7 @@ return {
                     { 'fileformat', symbols = { unix = 'unix' } },
                 },
                 lualine_y = { get_attached_clients },
+                lualine_z = { 'progress' },
             },
         })
     end,
