@@ -51,6 +51,7 @@ return {
                     'encoding',
                     { 'fileformat', symbols = { unix = 'unix' } },
                 },
+                lualine_y = { get_attached_clients },
             },
         })
     end,
