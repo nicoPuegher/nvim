@@ -54,6 +54,9 @@ return {
                 lualine_y = { get_attached_clients },
                 lualine_z = { 'progress' },
             },
+            options = {
+                component_separators = { left = '|', right = '|' },
+            },
         })
     end,
 }
