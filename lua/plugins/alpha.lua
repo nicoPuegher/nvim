@@ -24,5 +24,17 @@ return {
         }
 
         dashboard.section.footer.val = fortune()
+
+        local layout = {
+            { type = 'padding', val = 8 },
+            dashboard.section.header,
+            { type = 'padding', val = 2 },
+            dashboard.section.buttons,
+            { type = 'padding', val = 1 },
+            dashboard.section.footer,
+            { type = 'padding', val = 8 },
+        }
+
+        dashboard.opts.layout = layout
     end,
 }
