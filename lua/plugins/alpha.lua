@@ -36,5 +36,7 @@ return {
         }
 
         dashboard.opts.layout = layout
+
+        alpha.setup(dashboard.config)
     end,
 }
