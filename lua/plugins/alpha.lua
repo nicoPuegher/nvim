@@ -16,5 +16,11 @@ return {
             '  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ',
             '                                                     ',
         }
+
+        dashboard.section.buttons.val = {
+            dashboard.button('<leader>fe', '  > [F]ile [E]xplorer'),
+            dashboard.button('<leader>sf', '󰱼  > [S]earch [F]iles'),
+            dashboard.button('q', '  > [Q]uit Neovim', '<cmd>qa<CR>'),
+        }
     end,
 }
