@@ -22,5 +22,7 @@ return {
             dashboard.button('<leader>sf', '󰱼  > [S]earch [F]iles'),
             dashboard.button('q', '  > [Q]uit Neovim', '<cmd>qa<CR>'),
         }
+
+        dashboard.section.footer.val = fortune()
     end,
 }
