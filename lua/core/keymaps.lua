@@ -34,3 +34,5 @@ vim.keymap.set('n', '<leader>em', vim.diagnostic.open_float, { desc = '[D]iagnos
 
 -- Quickfix
 vim.keymap.set('n', '<leader>eq', vim.diagnostic.setqflist, { desc = '[Q]uickfix [D]iagnostics' })
+vim.keymap.set('n', '<leader>qo', '<cmd>copen<CR>', { desc = '[Q]uickfix [O]pen' })
+vim.keymap.set('n', '<leader>qc', '<cmd>cclose<CR>', { desc = '[Q]uickfix [C]lose' })
