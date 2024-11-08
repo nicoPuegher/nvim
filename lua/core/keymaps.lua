@@ -16,5 +16,9 @@ vim.keymap.set(
     { desc = '[R]eplace under cursor' }
 )
 
+-- Cursor movement
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Half page jump [D]own' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Half page jump [U]p' })
+
 -- Clipboard
 vim.keymap.set('v', '<leader>y', '"+y', { desc = '[Y]ank selection to clipboard' })
