@@ -25,3 +25,4 @@ vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Center search highlight up' })
 -- Clipboard
 vim.keymap.set('n', '<leader>y', '"+Y', { desc = '[Y]ank line to clipboard' })
 vim.keymap.set('v', '<leader>y', '"+y', { desc = '[Y]ank selection to clipboard' })
+vim.keymap.set('v', '<leader>vd', '"_d', { desc = '[V]oid [D]elete' })
