@@ -19,6 +19,8 @@ vim.keymap.set(
 -- Cursor movement
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Half page jump [D]own' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Half page jump [U]p' })
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Center search highlight down' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Center search highlight up' })
 
 -- Clipboard
 vim.keymap.set('v', '<leader>y', '"+y', { desc = '[Y]ank selection to clipboard' })
