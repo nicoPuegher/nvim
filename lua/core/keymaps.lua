@@ -36,3 +36,5 @@ vim.keymap.set('n', '<leader>em', vim.diagnostic.open_float, { desc = '[D]iagnos
 vim.keymap.set('n', '<leader>eq', vim.diagnostic.setqflist, { desc = '[Q]uickfix [D]iagnostics' })
 vim.keymap.set('n', '<leader>qo', '<cmd>copen<CR>', { desc = '[Q]uickfix [O]pen' })
 vim.keymap.set('n', '<leader>qc', '<cmd>cclose<CR>', { desc = '[Q]uickfix [C]lose' })
+vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>zz', { desc = 'Next quickfix item' })
+vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>zz', { desc = 'Prev quickfix item' })
