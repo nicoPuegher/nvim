@@ -30,7 +30,7 @@ vim.keymap.set('v', '<leader>vd', '"_d', { desc = '[V]oid [D]elete' })
 -- Diagnostics
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next [D]iagnostic message' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Prev [D]iagnostic message' })
-vim.keymap.set('n', '<leader>em', vim.diagnostic.open_float, { desc = '[D]iagnostic [M]essages' })
+vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = '[D]iagnostic [M]essages' })
 
 -- Quickfix
 vim.keymap.set('n', '<leader>eq', vim.diagnostic.setqflist, { desc = '[Q]uickfix [D]iagnostics' })
