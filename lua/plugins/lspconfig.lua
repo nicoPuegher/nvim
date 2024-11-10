@@ -41,6 +41,16 @@ return {
                 map('<leader>lsd', builtin.lsp_document_symbols, '[L]sp [S]ymbols [D]ocument')
                 map('<leader>lsw', builtin.lsp_dynamic_workspace_symbols, '[L]sp [S]ymbols [W]orkspace')
                 map('<leader>lc', vim.lsp.buf.declaration, '[L]sp [C]ode declaration')
+
+                local client = vim.lsp.get_client_by_id(event.data.client_id)
+                if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+                    local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
+                    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+                        buffer = event.buf,
+                        group = highlight_augroup,
+                        callback = vim.lsp.buf.document_highlight,
+                    })
+                end
             end,
         })
 
