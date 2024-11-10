@@ -33,6 +33,14 @@ return {
                     mode = mode or 'n'
                     vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
                 end
+
+                map('<leader>ld', builtin.lsp_definitions, '[L]sp [D]efinition')
+                map('<leader>lr', builtin.lsp_references, '[L]sp [R]eferences')
+                map('<leader>li', builtin.lsp_implementations, '[L]sp [I]mplementation')
+                map('<leader>lt', builtin.lsp_type_definitions, '[L]sp [T]ype definition')
+                map('<leader>lsd', builtin.lsp_document_symbols, '[L]sp [S]ymbols [D]ocument')
+                map('<leader>lsw', builtin.lsp_dynamic_workspace_symbols, '[L]sp [S]ymbols [W]orkspace')
+                map('<leader>lc', vim.lsp.buf.declaration, '[L]sp [C]ode declaration')
             end,
         })
 
