@@ -8,7 +8,7 @@ return {
                 vim.cmd.UndotreeToggle()
             end,
             mode = 'n',
-            desc = '[T]oggle [U]ndotree',
+            desc = '[U]ndotree',
         },
     },
     config = function()
