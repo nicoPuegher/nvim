@@ -26,7 +26,9 @@ return {
 
         vim.api.nvim_create_autocmd('LspAttach', {
             group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
-            callback = function(event) end,
+            callback = function(event)
+                local builtin = require('telescope.builtin')
+            end,
         })
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
