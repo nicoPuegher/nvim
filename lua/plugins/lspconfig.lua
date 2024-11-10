@@ -24,6 +24,11 @@ return {
             },
         }
 
+        vim.api.nvim_create_autocmd('LspAttach', {
+            group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+            callback = function(event) end,
+        })
+
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = vim.tbl_deep_extend('force', capabilities, cmp_nvim_lsp.default_capabilities())
 
