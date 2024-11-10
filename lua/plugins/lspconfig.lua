@@ -34,13 +34,13 @@ return {
                     vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
                 end
 
-                map('<leader>ld', builtin.lsp_definitions, '[L]sp [D]efinition')
-                map('<leader>lr', builtin.lsp_references, '[L]sp [R]eferences')
-                map('<leader>li', builtin.lsp_implementations, '[L]sp [I]mplementation')
-                map('<leader>lt', builtin.lsp_type_definitions, '[L]sp [T]ype definition')
-                map('<leader>lsd', builtin.lsp_document_symbols, '[L]sp [S]ymbols [D]ocument')
-                map('<leader>lsw', builtin.lsp_dynamic_workspace_symbols, '[L]sp [S]ymbols [W]orkspace')
-                map('<leader>lc', vim.lsp.buf.declaration, '[L]sp [C]ode declaration')
+                map('<leader>ld', builtin.lsp_definitions, '[D]efinition')
+                map('<leader>lr', builtin.lsp_references, '[R]eferences')
+                map('<leader>li', builtin.lsp_implementations, '[I]mplementation')
+                map('<leader>lt', builtin.lsp_type_definitions, '[T]ype definition')
+                map('<leader>lsd', builtin.lsp_document_symbols, '[S]ymbols [D]ocument')
+                map('<leader>lsw', builtin.lsp_dynamic_workspace_symbols, '[S]ymbols [W]orkspace')
+                map('<leader>lc', vim.lsp.buf.declaration, '[C]ode declaration')
 
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
@@ -72,7 +72,7 @@ return {
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
                     map('<leader>th', function()
                         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-                    end, '[T]oggle [H]ints')
+                    end, '[H]ints')
                 end
             end,
         })
