@@ -29,7 +29,22 @@ return {
             cssls = {},
             emmet_ls = {},
             stylelint_lsp = {},
-            ts_ls = {},
+            ts_ls = {
+                settings = {
+                    javascript = {
+                        inlayHints = {
+                            includeInlayParameterNameHints = 'all',
+                            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                            includeInlayFunctionParameterTypeHints = true,
+                            includeInlayVariableTypeHints = true,
+                            includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+                            includeInlayPropertyDeclarationTypeHints = true,
+                            includeInlayFunctionLikeReturnTypeHints = true,
+                            includeInlayEnumMemberValueHints = true,
+                        },
+                    },
+                },
+            },
             tailwindcss = {
                 filetypes = { 'html', 'javascriptreact' },
             },
