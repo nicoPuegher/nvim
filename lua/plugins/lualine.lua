@@ -14,8 +14,15 @@ return {
             local buf_ft = vim.bo.filetype
             local components = {}
 
+            local lsp_clients = {}
             for _, client in pairs(buf_clients) do
-                table.insert(components, client.name)
+                table.insert(lsp_clients, client.name)
+            end
+
+            if #lsp_clients > 0 then
+                table.insert(components, '[' .. table.concat(lsp_clients, ', ') .. ']')
+            else
+                table.insert(components, 'No client active')
             end
 
             local conform_success, conform = pcall(require, 'conform')
@@ -33,10 +40,6 @@ return {
                         table.insert(components, linter)
                     end
                 end
-            end
-
-            if #components == 0 then
-                return 'No client active'
             end
 
             return table.concat(components, ' | ')
