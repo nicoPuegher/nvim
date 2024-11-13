@@ -33,6 +33,7 @@ return {
             css = { 'prettierd' },
             javascript = { 'prettierd' },
             javascriptreact = { 'prettierd' },
+            json = { 'prettierd' },
         },
     },
 }
