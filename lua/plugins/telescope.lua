@@ -27,6 +27,11 @@ return {
                     themes.get_dropdown(),
                 },
             },
+            pickers = {
+                colorscheme = {
+                    enable_preview = true,
+                },
+            },
             defaults = {
                 mappings = {
                     i = {
