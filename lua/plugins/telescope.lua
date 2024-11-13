@@ -87,6 +87,11 @@ return {
                     '.*',
                 },
             })
-        end, { noremap = true, silent = true, desc = '[.] hidden' })
+        end, { silent = true, desc = '[.] hidden' })
+        vim.keymap.set('n', '<leader>se', function()
+            builtin.find_files({
+                find_command = { 'fd', '--type', 'f', '--exclude', 'node_modules' },
+            })
+        end, { desc = '[E]xclude modules' })
     end,
 }
