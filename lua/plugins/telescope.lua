@@ -35,7 +35,8 @@ return {
             defaults = {
                 mappings = {
                     i = {
-                        ['<esc>'] = actions.close,
+                        ['<ESC>'] = actions.close,
+                        ['<C-c>'] = actions.delete_buffer,
                     },
                 },
                 layout_config = {
