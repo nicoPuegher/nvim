@@ -11,7 +11,7 @@ return {
                 return vim.fn.executable('make') == 1
             end,
         },
-        { 'nvim-tree/nvim-web-devicons', enabled = true },
+        'nvim-tree/nvim-web-devicons',
         'nvim-telescope/telescope-ui-select.nvim',
         'sharkdp/fd',
     },
