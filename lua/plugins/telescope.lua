@@ -19,6 +19,7 @@ return {
         local telescope = require('telescope')
         local themes = require('telescope.themes')
         local builtin = require('telescope.builtin')
+        local actions = require('telescope.actions')
 
         telescope.setup({
             extensions = {
@@ -27,6 +28,11 @@ return {
                 },
             },
             defaults = {
+                mappings = {
+                    i = {
+                        ['<esc>'] = actions.close,
+                    },
+                },
                 layout_config = {
                     horizontal = { preview_width = 0.5 },
                 },
