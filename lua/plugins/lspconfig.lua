@@ -2,7 +2,7 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
         { 'williamboman/mason.nvim', config = true },
-        { 'williamboman/mason-lspconfig.nvim', opts = {} },
+        { 'williamboman/mason-lspconfig.nvim' },
         'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
@@ -28,7 +28,9 @@ return {
             },
             html = {},
             cssls = {},
-            emmet_ls = {},
+            emmet_ls = {
+                filetypes = { 'html' },
+            },
             stylelint_lsp = {},
             ts_ls = {
                 settings = {
@@ -112,6 +114,10 @@ return {
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = vim.tbl_deep_extend('force', capabilities, cmp_nvim_lsp.default_capabilities())
+        capabilities.textDocument.foldingRange = {
+            dynamicRegistration = false,
+            lineFoldingOnly = true,
+        }
 
         mason_lspconfig.setup({
             handlers = {
