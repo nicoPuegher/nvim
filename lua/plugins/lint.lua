@@ -6,6 +6,10 @@ return {
 
         lint.linters_by_ft = {
             lua = { 'selene' },
+            html = { 'htmlhint' },
+            css = { 'stylelint' },
+            javascript = { 'eslint_d' },
+            javascriptreact = { 'eslint_d' },
         }
 
         local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
@@ -20,6 +24,6 @@ return {
 
         vim.keymap.set('n', '<leader>cl', function()
             lint.try_lint()
-        end, { desc = '[C]ode [L]int' })
+        end, { desc = '[L]int' })
     end,
 }
