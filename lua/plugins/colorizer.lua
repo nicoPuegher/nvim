@@ -1,5 +1,7 @@
 return {
     'norcalli/nvim-colorizer.lua',
     event = 'VeryLazy',
-    config = function() end,
+    config = function()
+        local colorizer = require('colorizer')
+    end,
 }
