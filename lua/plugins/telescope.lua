@@ -59,6 +59,7 @@ return {
         vim.keymap.set('n', '<leader>sgf', builtin.git_files, { desc = '[F]iles' })
         vim.keymap.set('n', '<leader>sgs', builtin.git_status, { desc = '[S]tatus' })
         vim.keymap.set('n', '<leader>sgc', builtin.git_commits, { desc = '[C]ommits' })
+
         vim.keymap.set('n', '<leader>sc', function()
             builtin.current_buffer_fuzzy_find(themes.get_dropdown({
                 winblend = 10,
@@ -66,12 +67,15 @@ return {
                 border = false,
             }))
         end, { desc = '[C]urrent buffer' })
+
         vim.keymap.set('n', '<leader>si', function()
             builtin.live_grep({ grep_open_files = true })
         end, { desc = '[I]n open files' })
+
         vim.keymap.set('n', '<leader>sn', function()
             builtin.find_files({ cwd = vim.fn.stdpath('config') })
         end, { desc = '[N]eovim files' })
+
         vim.keymap.set('n', '<leader>s.', function()
             builtin.find_files({
                 hidden = true,
@@ -89,6 +93,7 @@ return {
                 },
             })
         end, { silent = true, desc = '[.] hidden' })
+
         vim.keymap.set('n', '<leader>se', function()
             builtin.find_files({
                 find_command = { 'fd', '--type', 'f', '--exclude', 'node_modules' },
