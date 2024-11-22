@@ -42,5 +42,9 @@ vim.keymap.set('n', '<leader>qe', function()
     vim.fn.setqflist({}, 'r')
 end, { desc = '[E]mpty' })
 
+-- Window management
+vim.keymap.set('n', '<Up>', ':resize +2<CR>', { silent = true, desc = 'Add vertical space' })
+vim.keymap.set('n', '<Down>', ':resize -2<CR>', { silent = true, desc = 'Remove vertical space' })
+
 -- Command line
 vim.keymap.set('c', '<C-r>', '<C-f><Up>', { desc = 'Search command history' })
