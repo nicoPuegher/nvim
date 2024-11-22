@@ -8,7 +8,7 @@ return {
                 require('conform').format({ async = true, lsp_format = 'fallback' })
             end,
             mode = '',
-            desc = '[C]ode [F]ormat',
+            desc = '[F]ormat',
         },
     },
     opts = {
@@ -29,6 +29,11 @@ return {
         end,
         formatters_by_ft = {
             lua = { 'stylua' },
+            html = { 'prettierd' },
+            css = { 'prettierd' },
+            javascript = { 'prettierd' },
+            javascriptreact = { 'prettierd' },
+            json = { 'prettierd' },
         },
     },
 }
