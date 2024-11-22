@@ -13,6 +13,7 @@ return {
                     gitsigns.nav_hunk('prev')
                 end
             end, { desc = 'Jump to the previous git [C]hange', buffer = bufnr })
+
             vim.keymap.set('n', ']c', function()
                 if vim.wo.diff then
                     vim.cmd.normal({ ']c', bang = true })
@@ -20,6 +21,7 @@ return {
                     gitsigns.nav_hunk('next')
                 end
             end, { desc = 'Jump to the next git [C]hange', buffer = bufnr })
+
             vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, { desc = '[S]tage hunk', buffer = bufnr })
             vim.keymap.set('n', '<leader>gu', gitsigns.undo_stage_hunk, { desc = '[U]nstage hunk', buffer = bufnr })
             vim.keymap.set('n', '<leader>gr', gitsigns.reset_hunk, { desc = '[R]estore hunk', buffer = bufnr })
