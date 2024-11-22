@@ -3,6 +3,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.showmode = false
+vim.opt.foldlevel = 99
 
 -- Cursor
 vim.opt.cursorline = true
