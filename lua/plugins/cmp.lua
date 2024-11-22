@@ -14,6 +14,7 @@ return {
         local cmp = require('cmp')
 
         luasnip.config.setup({})
+
         cmp.setup({
             snippet = {
                 expand = function(args)
