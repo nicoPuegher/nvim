@@ -3,7 +3,6 @@ return {
     branch = '0.1.x',
     event = 'VimEnter',
     dependencies = {
-        'nvim-lua/plenary.nvim',
         {
             'nvim-telescope/telescope-fzf-native.nvim',
             build = 'make',
@@ -11,6 +10,7 @@ return {
                 return vim.fn.executable('make') == 1
             end,
         },
+        'nvim-lua/plenary.nvim',
         'nvim-tree/nvim-web-devicons',
         'nvim-telescope/telescope-ui-select.nvim',
         'sharkdp/fd',
