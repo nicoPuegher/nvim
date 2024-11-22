@@ -7,9 +7,9 @@ return {
         'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
-        local cmp_nvim_lsp = require('cmp_nvim_lsp')
         local mason_lspconfig = require('mason-lspconfig')
         local lspconfig = require('lspconfig')
+        local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
         local servers = {
             lua_ls = {
