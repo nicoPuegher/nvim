@@ -19,6 +19,7 @@ return {
             { '<leader>d', group = '[D]iagnostic' },
             { '<leader>q', group = '[Q]uickfix' },
             { '<leader>v', group = '[V]oid', mode = { 'v' } },
+
             { '<leader>sg', group = '[G]it' },
             { '<leader>gt', group = '[T]oggle' },
             { '<leader>ls', group = '[S]ymbols' },
