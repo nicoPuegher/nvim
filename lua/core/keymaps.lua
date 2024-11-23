@@ -34,10 +34,10 @@ vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = '[M]essage
 
 -- Quickfix
 vim.keymap.set('n', '<leader>qd', vim.diagnostic.setqflist, { desc = '[D]iagnostics' })
-vim.keymap.set('n', '<leader>qo', '<cmd>copen<CR>', { desc = '[O]pen' })
-vim.keymap.set('n', '<leader>qc', '<cmd>cclose<CR>', { desc = '[C]lose' })
-vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>zz', { desc = 'Next quickfix item' })
-vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>zz', { desc = 'Prev quickfix item' })
+vim.keymap.set('n', '<leader>qo', ':copen<CR>', { desc = '[O]pen' })
+vim.keymap.set('n', '<leader>qc', ':cclose<CR>', { desc = '[C]lose' })
+vim.keymap.set('n', '<C-j>', ':cnext<CR>zz', { desc = 'Next quickfix item' })
+vim.keymap.set('n', '<C-k>', ':cprev<CR>zz', { desc = 'Prev quickfix item' })
 vim.keymap.set('n', '<leader>qe', function()
     vim.fn.setqflist({}, 'r')
 end, { desc = '[E]mpty' })
