@@ -5,6 +5,8 @@ vim.opt.signcolumn = 'yes'
 vim.opt.showmode = false
 vim.opt.foldlevel = 99
 
+--vim.opt.wrap = false
+
 -- Cursor
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
@@ -28,3 +30,6 @@ vim.opt.splitbelow = true
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.inccommand = 'split'
+
+-- Enable break indent ======== check if this fixed the indent problems I have
+-- vim.opt.breakindent = true

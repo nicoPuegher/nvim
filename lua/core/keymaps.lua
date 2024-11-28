@@ -50,3 +50,10 @@ vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', { silent = true, desc =
 
 -- Command line
 vim.keymap.set('c', '<C-r>', '<C-f><Up>', { desc = 'Search command history' })
+
+vim.filetype.add({
+    pattern = {
+        ['.env.*'] = 'sh',
+        ['.env'] = 'sh',
+    },
+})
