@@ -4,7 +4,7 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.showmode = false
 vim.opt.foldlevel = 99
-
+vim.opt.termguicolors = true
 --vim.opt.wrap = false
 
 -- Cursor
