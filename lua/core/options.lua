@@ -18,6 +18,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.list = true
 vim.opt.updatetime = 50
+vim.opt.timeoutlen = 50
 vim.opt.undofile = true
 vim.opt.backup = true
 vim.opt.backupdir = vim.fn.stdpath('state') .. '/backup'
