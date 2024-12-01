@@ -5,6 +5,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.showmode = false
 vim.opt.foldlevel = 99
 vim.opt.termguicolors = true
+vim.opt.pumheight = 20
 --vim.opt.wrap = false
 
 -- Cursor
@@ -31,6 +32,3 @@ vim.opt.splitbelow = true
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.inccommand = 'split'
-
--- Enable break indent ======== check if this fixed the indent problems I have
--- vim.opt.breakindent = true
