@@ -1,6 +1,6 @@
 return {
     'brenoprata10/nvim-highlight-colors',
-    event = 'VeryLazy',
+    ft = { 'html', 'css', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
     opts = {
         enable_tailwind = true,
     },
