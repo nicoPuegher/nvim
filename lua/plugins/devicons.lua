@@ -10,6 +10,12 @@ return {
                 cterm_color = '185',
                 name = 'PrettierConfig',
             },
+            ['.prettierignore'] = {
+                icon = '',
+                color = '#4285F4',
+                cterm_color = '33',
+                name = 'PrettierIgnore',
+            },
         },
     },
 }
