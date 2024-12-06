@@ -1,21 +1,22 @@
-return {
-    'nvim-tree/nvim-web-devicons',
-    event = 'VimEnter',
-    opts = {
-        variant = 'dark',
-        override_by_filename = {
-            ['.prettierrc'] = {
-                icon = '',
-                color = '#cbcb41',
-                cterm_color = '185',
-                name = 'PrettierConfig',
-            },
-            ['.prettierignore'] = {
-                icon = '',
-                color = '#4285F4',
-                cterm_color = '33',
-                name = 'PrettierIgnore',
-            },
-        },
-    },
-}
+return {}
+-- return {
+--     'nvim-tree/nvim-web-devicons',
+--     event = 'VimEnter',
+--     opts = {
+--         variant = 'dark',
+--         override_by_filename = {
+--             ['.prettierrc'] = {
+--                 icon = '',
+--                 color = '#cbcb41',
+--                 cterm_color = '185',
+--                 name = 'PrettierConfig',
+--             },
+--             ['.prettierignore'] = {
+--                 icon = '',
+--                 color = '#4285F4',
+--                 cterm_color = '33',
+--                 name = 'PrettierIgnore',
+--             },
+--         },
+--     },
+-- }
