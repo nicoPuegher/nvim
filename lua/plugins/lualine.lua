@@ -2,7 +2,7 @@ return {
     'nvim-lualine/lualine.nvim',
     event = 'BufRead',
     dependencies = {
-        'nvim-tree/nvim-web-devicons',
+        'echasnovski/mini.icons',
         'mfussenegger/nvim-lint',
         'stevearc/conform.nvim',
     },
