@@ -10,6 +10,8 @@ return {
             'javascript',
             'jsdoc',
             'json',
+            'typescript',
+            'tsx',
             'markdown',
             'markdown_inline',
             'diff',
