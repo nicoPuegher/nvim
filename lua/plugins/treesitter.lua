@@ -22,6 +22,7 @@ return {
             'luadoc',
             'luap',
             'editorconfig',
+            'bash',
         },
         highlight = {
             enable = true,
