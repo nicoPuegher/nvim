@@ -12,6 +12,7 @@ return {
             'json',
             'typescript',
             'tsx',
+            'prisma',
             'markdown',
             'markdown_inline',
             'diff',
