@@ -31,4 +31,7 @@ require('lazy').setup({
             'rose-pine',
         },
     },
+    change_detection = {
+        notify = false,
+    },
 })
