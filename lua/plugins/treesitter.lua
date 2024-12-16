@@ -29,6 +29,7 @@ return {
         },
         indent = {
             enable = true,
+            disable = { 'javascript', 'jsx', 'typescript', 'tsx' },
         },
         fold = {
             enable = true,
