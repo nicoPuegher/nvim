@@ -28,7 +28,16 @@ return {
                 },
             },
             html = {},
-            cssls = {},
+            cssls = {
+                settings = {
+                    css = {
+                        lint = {
+                            validate = true,
+                            unknownAtRules = 'ignore',
+                        },
+                    },
+                },
+            },
             emmet_ls = {
                 filetypes = { 'html' },
             },
