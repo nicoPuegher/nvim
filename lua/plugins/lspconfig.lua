@@ -39,7 +39,7 @@ return {
                 },
             },
             emmet_ls = {
-                filetypes = { 'html' },
+                filetypes = { 'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
             },
             stylelint_lsp = {},
             ts_ls = {
