@@ -41,7 +41,7 @@ return {
             emmet_ls = {
                 filetypes = { 'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
             },
-            stylelint_lsp = {},
+            -- stylelint_lsp = {},
             ts_ls = {
                 settings = {
                     javascript = {
