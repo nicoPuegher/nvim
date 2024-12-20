@@ -71,7 +71,7 @@ return {
                 },
             },
             tailwindcss = {
-                filetypes = { 'html', 'javascriptreact' },
+                filetypes = { 'html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
             },
         }
 
