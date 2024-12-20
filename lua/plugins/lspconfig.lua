@@ -92,6 +92,7 @@ return {
                 map('<leader>lsd', builtin.lsp_document_symbols, '[S]ymbols [D]ocument')
                 map('<leader>lsw', builtin.lsp_dynamic_workspace_symbols, '[S]ymbols [W]orkspace')
                 map('<leader>lc', vim.lsp.buf.declaration, '[C]ode declaration')
+                map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
