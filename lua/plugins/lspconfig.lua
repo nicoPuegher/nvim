@@ -143,7 +143,8 @@ return {
                     server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
                     server.on_attach = function()
                         vim.diagnostic.config({
-                            virtual_text = { severity_sort = true },
+                            -- virtual_text = { severity_sort = true },
+                            -- virtual_text = false,
                             float = {
                                 format = function(diagnostic)
                                     return string.format('%s (%s)', diagnostic.message, diagnostic.source)
