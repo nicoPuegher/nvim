@@ -145,6 +145,7 @@ return {
                         vim.diagnostic.config({
                             -- virtual_text = { severity_sort = true },
                             -- virtual_text = false,
+                            signs = false,
                             float = {
                                 format = function(diagnostic)
                                     return string.format('%s (%s)', diagnostic.message, diagnostic.source)
