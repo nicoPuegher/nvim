@@ -31,6 +31,9 @@ return {
             }, {
                 { name = 'buffer' },
             }),
+            formatting = {
+                format = lspkind.cmp_format({}),
+            },
             mapping = {
                 ['<C-n>'] = cmp.mapping.select_next_item(),
                 ['<C-p>'] = cmp.mapping.select_prev_item(),
