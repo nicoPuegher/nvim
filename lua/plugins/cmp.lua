@@ -13,6 +13,7 @@ return {
     opts = function()
         local luasnip = require('luasnip')
         local cmp = require('cmp')
+        local lspkind = require('lspkind')
 
         luasnip.config.setup({})
 
