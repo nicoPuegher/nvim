@@ -25,6 +25,8 @@ return {
             },
             completion = { completeopt = 'menu, menuone, noselect, noinsert' },
             sources = cmp.config.sources({
+                { name = 'path' },
+            }, {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
             }, {
