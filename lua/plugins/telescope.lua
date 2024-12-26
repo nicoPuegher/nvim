@@ -26,6 +26,7 @@ return {
                 ['ui-select'] = {
                     themes.get_dropdown(),
                 },
+                fzf = {},
             },
             pickers = {
                 colorscheme = {
