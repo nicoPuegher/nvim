@@ -30,11 +30,15 @@ return {
                 },
                 fzf = {},
             },
-            pickers = {
-                colorscheme = {
-                    enable_preview = true,
-                },
-            },
+            pickers = (function()
+                local result = {}
+
+                for picker_name, _ in pairs(builtin) do
+                    result[picker_name] = { results_title = false, preview_title = false }
+                end
+
+                return result
+            end)(),
             defaults = {
                 mappings = {
                     i = {
