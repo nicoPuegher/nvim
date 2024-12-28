@@ -37,6 +37,8 @@ return {
                     result[picker_name] = { results_title = false, preview_title = false }
                 end
 
+                result['find_files'].hidden = true
+
                 return result
             end)(),
             defaults = {
