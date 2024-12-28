@@ -38,6 +38,7 @@ return {
                 end
 
                 result['find_files'].hidden = true
+                result['live_grep'].additional_args = '--hidden'
 
                 return result
             end)(),
