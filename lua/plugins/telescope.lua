@@ -44,6 +44,11 @@ return {
                 return result
             end)(),
             defaults = {
+                file_ignore_patterns = {
+                    '^%.git/',
+                    '^%.git$',
+                    '.DS_Store',
+                },
                 mappings = {
                     i = {
                         ['<ESC>'] = actions.close,
