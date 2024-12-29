@@ -39,6 +39,7 @@ return {
 
                 result['find_files'].hidden = true
                 result['live_grep'].additional_args = '--hidden'
+                result['colorscheme'].enable_preview = true
 
                 return result
             end)(),
