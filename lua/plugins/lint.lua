@@ -1,15 +1,17 @@
 return {
     'mfussenegger/nvim-lint',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufRead', 'BufNewFile' },
     config = function()
         local lint = require('lint')
 
         lint.linters_by_ft = {
             lua = { 'selene' },
-            html = { 'htmlhint' },
-            css = { 'stylelint' },
+            -- html = { 'htmlhint' },
+            -- css = { 'stylelint' },
             javascript = { 'eslint_d' },
             javascriptreact = { 'eslint_d' },
+            typescript = { 'eslint_d' },
+            typescriptreact = { 'eslint_d' },
         }
 
         local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })

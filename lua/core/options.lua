@@ -4,6 +4,9 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.showmode = false
 vim.opt.foldlevel = 99
+vim.opt.termguicolors = true
+vim.opt.pumheight = 20
+--vim.opt.wrap = false
 
 -- Cursor
 vim.opt.cursorline = true
@@ -15,7 +18,8 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.list = true
-vim.opt.updatetime = 250
+vim.opt.updatetime = 50
+vim.opt.timeoutlen = 50
 vim.opt.undofile = true
 vim.opt.backup = true
 vim.opt.backupdir = vim.fn.stdpath('state') .. '/backup'

@@ -1,7 +1,7 @@
 return {
     'neovim/nvim-lspconfig',
     dependencies = {
-        { 'williamboman/mason.nvim', config = true },
+        { 'williamboman/mason.nvim', opts = {} },
         { 'williamboman/mason-lspconfig.nvim' },
         { 'j-hui/fidget.nvim', opts = {} },
         'hrsh7th/cmp-nvim-lsp',
@@ -28,11 +28,20 @@ return {
                 },
             },
             html = {},
-            cssls = {},
-            emmet_ls = {
-                filetypes = { 'html' },
+            cssls = {
+                settings = {
+                    css = {
+                        lint = {
+                            validate = true,
+                            unknownAtRules = 'ignore',
+                        },
+                    },
+                },
             },
-            stylelint_lsp = {},
+            emmet_ls = {
+                filetypes = { 'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+            },
+            -- stylelint_lsp = {},
             ts_ls = {
                 settings = {
                     javascript = {
@@ -47,10 +56,22 @@ return {
                             includeInlayEnumMemberValueHints = true,
                         },
                     },
+                    typescript = {
+                        inlayHints = {
+                            includeInlayParameterNameHints = 'all',
+                            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                            includeInlayFunctionParameterTypeHints = true,
+                            includeInlayVariableTypeHints = true,
+                            includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+                            includeInlayPropertyDeclarationTypeHints = true,
+                            includeInlayFunctionLikeReturnTypeHints = true,
+                            includeInlayEnumMemberValueHints = true,
+                        },
+                    },
                 },
             },
             tailwindcss = {
-                filetypes = { 'html', 'javascriptreact' },
+                filetypes = { 'html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
             },
         }
 
@@ -71,6 +92,7 @@ return {
                 map('<leader>lsd', builtin.lsp_document_symbols, '[S]ymbols [D]ocument')
                 map('<leader>lsw', builtin.lsp_dynamic_workspace_symbols, '[S]ymbols [W]orkspace')
                 map('<leader>lc', vim.lsp.buf.declaration, '[C]ode declaration')
+                map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
@@ -107,12 +129,6 @@ return {
             end,
         })
 
-        local signs = { Error = '', Warn = '', Hint = '', Info = '' }
-        for type, icon in pairs(signs) do
-            local hl = 'DiagnosticSign' .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-        end
-
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = vim.tbl_deep_extend('force', capabilities, cmp_nvim_lsp.default_capabilities())
         capabilities.textDocument.foldingRange = {
@@ -127,7 +143,9 @@ return {
                     server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
                     server.on_attach = function()
                         vim.diagnostic.config({
-                            virtual_text = { severity_sort = true },
+                            -- virtual_text = { severity_sort = true },
+                            -- virtual_text = false,
+                            signs = false,
                             float = {
                                 format = function(diagnostic)
                                     return string.format('%s (%s)', diagnostic.message, diagnostic.source)

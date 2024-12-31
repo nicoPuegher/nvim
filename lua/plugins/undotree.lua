@@ -1,6 +1,5 @@
 return {
     'mbbill/undotree',
-    event = 'VeryLazy',
     keys = {
         {
             '<leader>tu',

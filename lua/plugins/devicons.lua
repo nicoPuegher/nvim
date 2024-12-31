@@ -1,18 +1,22 @@
-return {
-    'nvim-tree/nvim-web-devicons',
-    event = 'VimEnter',
-    config = function()
-        local devicons = require('nvim-web-devicons')
-
-        devicons.setup({
-            override_by_filename = {
-                ['.prettierrc'] = {
-                    icon = '',
-                    color = '#cbcb41',
-                    cterm_color = '185',
-                    name = 'PrettierConfig',
-                },
-            },
-        })
-    end,
-}
+return {}
+-- return {
+--     'nvim-tree/nvim-web-devicons',
+--     event = 'VimEnter',
+--     opts = {
+--         variant = 'dark',
+--         override_by_filename = {
+--             ['.prettierrc'] = {
+--                 icon = '',
+--                 color = '#cbcb41',
+--                 cterm_color = '185',
+--                 name = 'PrettierConfig',
+--             },
+--             ['.prettierignore'] = {
+--                 icon = '',
+--                 color = '#4285F4',
+--                 cterm_color = '33',
+--                 name = 'PrettierIgnore',
+--             },
+--         },
+--     },
+-- }

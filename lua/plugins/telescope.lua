@@ -3,6 +3,7 @@ return {
     branch = '0.1.x',
     event = 'VimEnter',
     dependencies = {
+        'nvim-lua/plenary.nvim',
         {
             'nvim-telescope/telescope-fzf-native.nvim',
             build = 'make',
@@ -10,9 +11,8 @@ return {
                 return vim.fn.executable('make') == 1
             end,
         },
-        'nvim-lua/plenary.nvim',
-        'nvim-tree/nvim-web-devicons',
         'nvim-telescope/telescope-ui-select.nvim',
+        'echasnovski/mini.icons',
         'sharkdp/fd',
     },
     opts = function()
@@ -24,15 +24,31 @@ return {
         telescope.setup({
             extensions = {
                 ['ui-select'] = {
-                    themes.get_dropdown(),
+                    themes.get_dropdown({
+                        borderchars = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+                    }),
                 },
+                fzf = {},
             },
-            pickers = {
-                colorscheme = {
-                    enable_preview = true,
-                },
-            },
+            pickers = (function()
+                local result = {}
+
+                for picker_name, _ in pairs(builtin) do
+                    result[picker_name] = { results_title = false, preview_title = false }
+                end
+
+                result['find_files'].hidden = true
+                result['live_grep'].additional_args = '--hidden'
+                result['colorscheme'].enable_preview = true
+
+                return result
+            end)(),
             defaults = {
+                file_ignore_patterns = {
+                    '^%.git/',
+                    '^%.git$',
+                    '.DS_Store',
+                },
                 mappings = {
                     i = {
                         ['<ESC>'] = actions.close,
@@ -42,7 +58,8 @@ return {
                 layout_config = {
                     horizontal = { preview_width = 0.5 },
                 },
-                border = false,
+                border = true,
+                borderchars = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
             },
         })
 
@@ -84,10 +101,6 @@ return {
                     '--type',
                     'f',
                     '--hidden',
-                    '--exclude',
-                    '.git',
-                    '--exclude',
-                    '*/',
                     '--glob',
                     '.*',
                 },

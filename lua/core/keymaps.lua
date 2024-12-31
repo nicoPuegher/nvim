@@ -6,8 +6,8 @@ vim.g.maplocalleader = '\\'
 vim.keymap.set('n', '<leader>fe', vim.cmd.Ex, { desc = '[E]xplorer' })
 
 -- Text manipulation
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { silent = true, desc = 'Move selection down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { silent = true, desc = 'Move selection up' })
 vim.keymap.set('v', '<leader>vp', '"_dP', { desc = '[P]aste' })
 vim.keymap.set(
     'n',
@@ -34,13 +34,19 @@ vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = '[M]essage
 
 -- Quickfix
 vim.keymap.set('n', '<leader>qd', vim.diagnostic.setqflist, { desc = '[D]iagnostics' })
-vim.keymap.set('n', '<leader>qo', '<cmd>copen<CR>', { desc = '[O]pen' })
-vim.keymap.set('n', '<leader>qc', '<cmd>cclose<CR>', { desc = '[C]lose' })
-vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>zz', { desc = 'Next quickfix item' })
-vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>zz', { desc = 'Prev quickfix item' })
+vim.keymap.set('n', '<leader>qo', ':copen<CR>', { desc = '[O]pen' })
+vim.keymap.set('n', '<leader>qc', ':cclose<CR>', { desc = '[C]lose' })
+vim.keymap.set('n', '<C-j>', ':cnext<CR>zz', { desc = 'Next quickfix item' })
+vim.keymap.set('n', '<C-k>', ':cprev<CR>zz', { desc = 'Prev quickfix item' })
 vim.keymap.set('n', '<leader>qe', function()
     vim.fn.setqflist({}, 'r')
 end, { desc = '[E]mpty' })
+
+-- Window management
+vim.keymap.set('n', '<Up>', ':resize +2<CR>', { silent = true, desc = 'Add vertical space' })
+vim.keymap.set('n', '<Down>', ':resize -2<CR>', { silent = true, desc = 'Remove vertical space' })
+vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', { silent = true, desc = 'Add horizontal space' })
+vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', { silent = true, desc = 'Remove horizontal space' })
 
 -- Command line
 vim.keymap.set('c', '<C-r>', '<C-f><Up>', { desc = 'Search command history' })

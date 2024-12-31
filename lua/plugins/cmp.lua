@@ -8,10 +8,12 @@ return {
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
+        'onsails/lspkind.nvim',
     },
     opts = function()
         local luasnip = require('luasnip')
         local cmp = require('cmp')
+        local lspkind = require('lspkind')
 
         luasnip.config.setup({})
 
@@ -23,12 +25,16 @@ return {
             },
             completion = { completeopt = 'menu, menuone, noselect, noinsert' },
             sources = cmp.config.sources({
+                { name = 'path' },
+            }, {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
-                { name = 'path' },
             }, {
                 { name = 'buffer' },
             }),
+            formatting = {
+                format = lspkind.cmp_format({}),
+            },
             mapping = {
                 ['<C-n>'] = cmp.mapping.select_next_item(),
                 ['<C-p>'] = cmp.mapping.select_prev_item(),

@@ -10,6 +10,9 @@ return {
             'javascript',
             'jsdoc',
             'json',
+            'typescript',
+            'tsx',
+            'prisma',
             'markdown',
             'markdown_inline',
             'diff',
@@ -19,12 +22,14 @@ return {
             'luadoc',
             'luap',
             'editorconfig',
+            'bash',
         },
         highlight = {
             enable = true,
         },
         indent = {
             enable = true,
+            disable = { 'javascript', 'jsx', 'typescript', 'tsx' },
         },
         fold = {
             enable = true,

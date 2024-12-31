@@ -1,6 +1,6 @@
 return {
     'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
+    event = 'BufWritePre',
     keys = {
         {
             '<leader>cf',
@@ -23,7 +23,7 @@ return {
             end
 
             return {
-                timeout_ms = 500,
+                timeout_ms = 10000,
                 lsp_format = lsp_format_opt,
             }
         end,
@@ -33,7 +33,10 @@ return {
             css = { 'prettierd' },
             javascript = { 'prettierd' },
             javascriptreact = { 'prettierd' },
+            typescript = { 'prettierd' },
+            typescriptreact = { 'prettierd' },
             json = { 'prettierd' },
+            jsonc = { 'prettierd' },
         },
     },
 }
