@@ -1,42 +1,37 @@
 return {
-    'stevearc/conform.nvim',
-    event = 'BufWritePre',
+    "stevearc/conform.nvim",
+    event = "BufWritePre",
     keys = {
         {
-            '<leader>cf',
+            "<leader>cf",
             function()
-                require('conform').format({ async = true, lsp_format = 'fallback' })
+                require("conform").format({ async = true, lsp_format = "fallback" })
             end,
-            mode = '',
-            desc = '[F]ormat',
+            mode = "",
+            desc = "[F]ormat",
         },
     },
     opts = {
         format_on_save = function(bufnr)
             local disable_filetypes = {}
-            local lsp_format_opt = ''
+            local lsp_format_opt = ""
 
             if disable_filetypes[vim.bo[bufnr].filetype] then
-                lsp_format_opt = 'never'
+                lsp_format_opt = "never"
             else
-                lsp_format_opt = 'fallback'
+                lsp_format_opt = "fallback"
             end
 
             return {
-                timeout_ms = 10000,
+                timeout_ms = 500,
                 lsp_format = lsp_format_opt,
             }
         end,
         formatters_by_ft = {
-            lua = { 'stylua' },
-            html = { 'prettierd' },
-            css = { 'prettierd' },
-            javascript = { 'prettierd' },
-            javascriptreact = { 'prettierd' },
-            typescript = { 'prettierd' },
-            typescriptreact = { 'prettierd' },
-            json = { 'prettierd' },
-            jsonc = { 'prettierd' },
+            lua = { "stylua" },
+            python = { "black" },
+            html = { "prettier" },
+            css = { "prettier" },
         },
     },
 }
