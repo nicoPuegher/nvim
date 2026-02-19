@@ -1,52 +1,24 @@
 -- Leader keys
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- Explorer
-vim.keymap.set('n', '<leader>fe', vim.cmd.Ex, { desc = '[E]xplorer' })
+vim.keymap.set("n", "<leader>fe", vim.cmd.Ex, { desc = "[E]xplorer" })
 
 -- Text manipulation
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { silent = true, desc = 'Move selection down' })
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { silent = true, desc = 'Move selection up' })
-vim.keymap.set('v', '<leader>vp', '"_dP', { desc = '[P]aste' })
-vim.keymap.set(
-    'n',
-    '<leader>r',
-    [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = '[R]eplace under cursor' }
-)
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move selection down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move selection up" })
 
 -- Cursor movement
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Half page jump [D]own' })
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Half page jump [U]p' })
-vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Center search highlight down' })
-vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Center search highlight up' })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page jump [D]own" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page jump [U]p" })
 
 -- Clipboard
-vim.keymap.set('n', '<leader>y', '"+Y', { desc = '[Y]ank line to clipboard' })
-vim.keymap.set('v', '<leader>y', '"+y', { desc = '[Y]ank selection to clipboard' })
-vim.keymap.set('v', '<leader>vd', '"_d', { desc = '[D]elete' })
+vim.keymap.set("n", "<leader>y", '"+Y', { desc = "[Y]ank line to clipboard" })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "[Y]ank selection to clipboard" })
 
 -- Diagnostics
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next [D]iagnostic message' })
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Prev [D]iagnostic message' })
-vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = '[M]essages' })
-
--- Quickfix
-vim.keymap.set('n', '<leader>qd', vim.diagnostic.setqflist, { desc = '[D]iagnostics' })
-vim.keymap.set('n', '<leader>qo', ':copen<CR>', { desc = '[O]pen' })
-vim.keymap.set('n', '<leader>qc', ':cclose<CR>', { desc = '[C]lose' })
-vim.keymap.set('n', '<C-j>', ':cnext<CR>zz', { desc = 'Next quickfix item' })
-vim.keymap.set('n', '<C-k>', ':cprev<CR>zz', { desc = 'Prev quickfix item' })
-vim.keymap.set('n', '<leader>qe', function()
-    vim.fn.setqflist({}, 'r')
-end, { desc = '[E]mpty' })
-
--- Window management
-vim.keymap.set('n', '<Up>', ':resize +2<CR>', { silent = true, desc = 'Add vertical space' })
-vim.keymap.set('n', '<Down>', ':resize -2<CR>', { silent = true, desc = 'Remove vertical space' })
-vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', { silent = true, desc = 'Add horizontal space' })
-vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', { silent = true, desc = 'Remove horizontal space' })
+vim.keymap.set("n", "<leader>dm", vim.diagnostic.open_float, { desc = "[M]essages" })
 
 -- Command line
-vim.keymap.set('c', '<C-r>', '<C-f><Up>', { desc = 'Search command history' })
+vim.keymap.set("c", "<C-r>", "<C-f><Up>", { desc = "Search command history" })
