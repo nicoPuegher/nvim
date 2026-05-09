@@ -1,31 +1,31 @@
 return {
-    'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
-    event = 'VimEnter',
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    event = "VimEnter",
     dependencies = {
-        'nvim-lua/plenary.nvim',
+        "nvim-lua/plenary.nvim",
         {
-            'nvim-telescope/telescope-fzf-native.nvim',
-            build = 'make',
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make",
             cond = function()
-                return vim.fn.executable('make') == 1
+                return vim.fn.executable("make") == 1
             end,
         },
-        'nvim-telescope/telescope-ui-select.nvim',
-        'echasnovski/mini.icons',
-        'sharkdp/fd',
+        "nvim-telescope/telescope-ui-select.nvim",
+        "echasnovski/mini.icons",
+        "sharkdp/fd",
     },
     opts = function()
-        local telescope = require('telescope')
-        local themes = require('telescope.themes')
-        local builtin = require('telescope.builtin')
-        local actions = require('telescope.actions')
+        local telescope = require("telescope")
+        local themes = require("telescope.themes")
+        local builtin = require("telescope.builtin")
+        local actions = require("telescope.actions")
 
         telescope.setup({
             extensions = {
-                ['ui-select'] = {
+                ["ui-select"] = {
                     themes.get_dropdown({
-                        borderchars = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+                        borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
                     }),
                 },
                 fzf = {},
@@ -37,80 +37,80 @@ return {
                     result[picker_name] = { results_title = false, preview_title = false }
                 end
 
-                result['find_files'].hidden = true
-                result['live_grep'].additional_args = '--hidden'
-                result['colorscheme'].enable_preview = true
+                result["find_files"].hidden = true
+                result["live_grep"].additional_args = "--hidden"
+                result["colorscheme"].enable_preview = true
 
                 return result
             end)(),
             defaults = {
                 file_ignore_patterns = {
-                    '^%.git/',
-                    '^%.git$',
-                    '.DS_Store',
+                    "^%.git/",
+                    "^%.git$",
+                    ".DS_Store",
                 },
                 mappings = {
                     i = {
-                        ['<ESC>'] = actions.close,
-                        ['<C-c>'] = actions.delete_buffer,
+                        ["<ESC>"] = actions.close,
+                        ["<C-c>"] = actions.delete_buffer,
                     },
                 },
                 layout_config = {
                     horizontal = { preview_width = 0.5 },
                 },
                 border = true,
-                borderchars = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+                borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
             },
         })
 
-        pcall(telescope.load_extension, 'fzf')
-        pcall(telescope.load_extension, 'ui-select')
+        pcall(telescope.load_extension, "fzf")
+        pcall(telescope.load_extension, "ui-select")
 
-        vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[F]iles' })
-        vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[H]elp' })
-        vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[K]eymaps' })
-        vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[B]uffers' })
-        vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[D]iagnostics' })
-        vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]elect builtin' })
-        vim.keymap.set('n', '<leader>sl', builtin.live_grep, { desc = '[L]ive grep' })
-        vim.keymap.set('n', '<leader>sgf', builtin.git_files, { desc = '[F]iles' })
-        vim.keymap.set('n', '<leader>sgs', builtin.git_status, { desc = '[S]tatus' })
-        vim.keymap.set('n', '<leader>sgc', builtin.git_commits, { desc = '[C]ommits' })
+        vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[F]iles" })
+        vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[H]elp" })
+        vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[K]eymaps" })
+        vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[B]uffers" })
+        vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[D]iagnostics" })
+        vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]elect builtin" })
+        vim.keymap.set("n", "<leader>sl", builtin.live_grep, { desc = "[L]ive grep" })
+        vim.keymap.set("n", "<leader>sgf", builtin.git_files, { desc = "[F]iles" })
+        vim.keymap.set("n", "<leader>sgs", builtin.git_status, { desc = "[S]tatus" })
+        vim.keymap.set("n", "<leader>sgc", builtin.git_commits, { desc = "[C]ommits" })
 
-        vim.keymap.set('n', '<leader>sc', function()
+        vim.keymap.set("n", "<leader>sc", function()
             builtin.current_buffer_fuzzy_find(themes.get_dropdown({
                 winblend = 10,
                 previewer = false,
                 border = false,
             }))
-        end, { desc = '[C]urrent buffer' })
+        end, { desc = "[C]urrent buffer" })
 
-        vim.keymap.set('n', '<leader>si', function()
+        vim.keymap.set("n", "<leader>si", function()
             builtin.live_grep({ grep_open_files = true })
-        end, { desc = '[I]n open files' })
+        end, { desc = "[I]n open files" })
 
-        vim.keymap.set('n', '<leader>sn', function()
-            builtin.find_files({ cwd = vim.fn.stdpath('config') })
-        end, { desc = '[N]eovim files' })
+        vim.keymap.set("n", "<leader>sn", function()
+            builtin.find_files({ cwd = vim.fn.stdpath("config") })
+        end, { desc = "[N]eovim files" })
 
-        vim.keymap.set('n', '<leader>s.', function()
+        vim.keymap.set("n", "<leader>s.", function()
             builtin.find_files({
                 hidden = true,
                 find_command = {
-                    'fd',
-                    '--type',
-                    'f',
-                    '--hidden',
-                    '--glob',
-                    '.*',
+                    "fd",
+                    "--type",
+                    "f",
+                    "--hidden",
+                    "--glob",
+                    ".*",
                 },
             })
-        end, { silent = true, desc = '[.] hidden' })
+        end, { silent = true, desc = "[.] hidden" })
 
-        vim.keymap.set('n', '<leader>se', function()
+        vim.keymap.set("n", "<leader>se", function()
             builtin.find_files({
-                find_command = { 'fd', '--type', 'f', '--exclude', 'node_modules' },
+                find_command = { "fd", "--type", "f", "--exclude", "node_modules" },
             })
-        end, { desc = '[E]xclude modules' })
+        end, { desc = "[E]xclude modules" })
     end,
 }
